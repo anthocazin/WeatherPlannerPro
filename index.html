@@ -123,6 +123,14 @@
 		</div>
 	</a>
 
+	<a class="launch-btn" id="btn-assess" href="WeatherAssessment.html">
+		<div class="btn-icon">📋</div>
+		<div class="btn-text">
+			<div class="btn-label">Weather Assessment</div>
+			<div class="btn-desc">Analyses Hs/Tp/Dir · Facteur α · StormGeo/DTN/Windy · Rapport PDF</div>
+		</div>
+	</a>
+
 	<a class="launch-btn" id="btn-desktop" href="WeatherPlannerPro_fixed.html">
 		<div class="btn-icon">🖥️</div>
 		<div class="btn-text">
@@ -132,7 +140,7 @@
 	</a>
 </div>
 
-<div class="version">WxPlanner v1.0 · Both apps work offline once loaded</div>
+<div class="version">WxPlanner v2.0 · All apps work offline once loaded</div>
 
 <script>
 	// Robust mobile detection — UA string is most reliable for Android PWA launches
@@ -159,9 +167,9 @@
 		recBtn.href = 'WxPlanner_Field.html';
 	} else {
 		recIcon.textContent  = '🖥️';
-		recLabel.textContent = 'Desktop Planner';
+		recLabel.textContent = 'Weather Assessment';
 		recDesc.textContent  = 'Recommended for your screen · click to open';
-		recBtn.href = 'WeatherPlannerPro_fixed.html';
+		recBtn.href = 'WeatherAssessment.html';
 	}
 
 	if (manualOverride) {
@@ -173,9 +181,9 @@
 	} else {
 		// Auto-redirect after 1.2s
 		setTimeout(() => {
-			detMsg.textContent = isMobile ? 'Mobile detected — opening Field App...' : 'Desktop detected — opening Planner...';
+			detMsg.textContent = isMobile ? 'Mobile detected — opening Field App...' : 'Desktop detected — opening Weather Assessment...';
 			setTimeout(() => {
-				window.location.href = isMobile ? 'WxPlanner_Field.html' : 'WeatherPlannerPro_fixed.html';
+				window.location.href = isMobile ? 'WxPlanner_Field.html' : 'WeatherAssessment.html';
 			}, 800);
 		}, 1200);
 
