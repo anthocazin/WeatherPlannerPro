@@ -8,26 +8,24 @@
 <link rel="manifest" href="manifest.json">
 <style>
 :root{
-  --navy:#2f3872; --navy2:#1f2656; --head:#c6d9f1; --ink:#14161c; --ink2:#4a4d57; --muted:#767985;
+  --navy:#2f3872; --navy2:#1f2656; --head:#c6d9f1; --ink:#14161c; --ink2:#4a4d57; --muted:#6c707c;
   --line:#c9ccd6; --bg:#f3f4f7; --card:#ffffff; --focus:#1f6feb;
-  --ok:#0a7a33; --okbg:#e3f4e8; --warn:#9a6200; --warnbg:#fff3d6; --bad:#b3261e; --badbg:#fde7e5;
-  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#6250d6;
-  --radius:8px; --fs:15px;
+  --ok:#0a7a33; --okbg:#e3f4e8; --warn:#8a5a00; --warnbg:#fff3d6; --bad:#b3261e; --badbg:#fde7e5;
+  --radius:8px;
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:var(--fs);color:var(--ink);background:var(--bg);line-height:1.45}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:15px;color:var(--ink);background:var(--bg);line-height:1.45}
 a{color:var(--navy)}
 :focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 .skip{position:absolute;left:-999px;top:0;background:#fff;padding:8px;z-index:99}
 .skip:focus{left:8px}
-header.top{background:var(--navy);color:#fff;display:flex;align-items:center;gap:16px;padding:10px 18px;flex-wrap:wrap;position:sticky;top:0;z-index:20}
+header.top{background:var(--navy);color:#fff;display:flex;align-items:center;gap:12px;padding:10px 18px;flex-wrap:wrap;position:sticky;top:0;z-index:20}
 header.top h1{font-size:18px;margin:0;font-weight:700;letter-spacing:.3px}
 header.top .sub{font-size:12px;opacity:.8}
 header.top .sp{flex:1}
-header.top button, header.top select, header.top label.btn{background:#fff;color:var(--navy);border:0;border-radius:6px;padding:7px 12px;font-weight:600;font-size:14px;cursor:pointer}
-header.top select{font-weight:500;width:auto;min-height:0}
-nav.steps{display:flex;gap:4px;background:var(--navy2);padding:0 12px;overflow-x:auto;position:sticky;top:52px;z-index:19}
+header.top button, header.top select, header.top label.btn{background:#fff;color:var(--navy);border:0;border-radius:6px;padding:7px 12px;font-weight:600;font-size:14px;cursor:pointer;width:auto;min-height:0}
+nav.steps{display:flex;gap:4px;background:var(--navy2);padding:0 12px;overflow-x:auto;position:sticky;top:56px;z-index:19}
 nav.steps button{background:transparent;color:#cfd3ea;border:0;border-bottom:3px solid transparent;padding:11px 14px;font-size:14.5px;cursor:pointer;white-space:nowrap;font-weight:600}
 nav.steps button .n{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#4b538f;color:#fff;font-size:12px;margin-right:6px}
 nav.steps button[aria-selected=true]{color:#fff;border-bottom-color:#fff}
@@ -38,27 +36,32 @@ section.tab{display:none}
 section.tab.on{display:block}
 h2{font-size:21px;margin:4px 0 4px}
 h3{font-size:17px;margin:0 0 8px}
-p.lead{color:var(--ink2);margin:0 0 16px;max-width:900px}
+h4{font-size:15px;margin:14px 0 6px}
+p.lead{color:var(--ink2);margin:0 0 16px;max-width:920px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:16px}
 .card.head{border-top:5px solid var(--navy)}
 .grid{display:grid;gap:12px}
 .g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-.g4{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
 label.f{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:600;color:var(--ink2)}
 label.f small{font-weight:400;color:var(--muted)}
 input[type=text],input[type=number],input[type=datetime-local],input[type=password],select,textarea{font:inherit;font-size:15px;padding:8px 10px;border:1px solid #9a9eab;border-radius:6px;background:#fff;color:var(--ink);min-height:38px;width:100%}
+input[readonly]{background:#f1f2f5}
 textarea{min-height:120px;font-family:ui-monospace,Consolas,monospace;font-size:13px}
-input[type=checkbox]{width:18px;height:18px;vertical-align:middle}
+input[type=checkbox],input[type=radio]{width:18px;height:18px;vertical-align:middle}
 .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .row.end{justify-content:flex-end}
-button.b{font:inherit;font-size:14.5px;font-weight:600;padding:8px 14px;border-radius:6px;border:1px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer;min-height:38px}
+.row.sb{justify-content:space-between}
+button.b,label.b{font:inherit;font-size:14.5px;font-weight:600;padding:8px 14px;border-radius:6px;border:1px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer;min-height:38px;display:inline-flex;align-items:center;gap:6px}
 button.b.p{background:var(--navy);color:#fff}
 button.b.d{border-color:var(--bad);color:var(--bad)}
 button.b.s{padding:5px 10px;min-height:30px;font-size:13px}
 button.b:disabled{opacity:.5;cursor:not-allowed}
-.help{font-size:13px;color:var(--ink2);background:#eef2fb;border-left:4px solid var(--navy);padding:8px 12px;border-radius:4px;margin:8px 0}
-.warnbox{font-size:13.5px;background:var(--warnbg);border-left:4px solid var(--warn);padding:8px 12px;border-radius:4px;margin:8px 0}
+.help{font-size:13.5px;color:var(--ink2);background:#eef2fb;border-left:4px solid var(--navy);padding:8px 12px;border-radius:4px;margin:8px 0}
+.help ol{margin:4px 0 0;padding-left:20px}
+.warnbox{font-size:13.5px;background:var(--warnbg);border-left:4px solid #c98a00;padding:8px 12px;border-radius:4px;margin:8px 0}
+.badbox{font-size:13.5px;background:var(--badbg);border-left:4px solid var(--bad);padding:8px 12px;border-radius:4px;margin:8px 0;color:#6d1410}
 .badge{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:99px;font-weight:700;font-size:13px;white-space:nowrap}
 .badge.ok{background:var(--okbg);color:var(--ok)}
 .badge.bad{background:var(--badbg);color:var(--bad)}
@@ -69,15 +72,7 @@ table.t th,table.t td{border:1px solid var(--line);padding:5px 7px;text-align:ce
 table.t th{background:var(--head);font-weight:700}
 table.t td.l, table.t th.l{text-align:left}
 table.t tr.nok td{background:var(--badbg)}
-.scroll{overflow:auto;max-height:520px}
-/* analysis grid */
-table.ag{border-collapse:collapse}
-table.ag th,table.ag td{border:1px solid var(--line);padding:0}
-table.ag th{background:var(--head);font-size:13px;padding:0}
-table.ag th.corner{padding:4px 8px;font-size:12px;white-space:nowrap}
-table.ag input{border:0;border-radius:0;width:66px;min-height:32px;text-align:center;padding:4px;font-size:14px;background:transparent}
-table.ag th input{font-weight:700}
-table.ag td.c0{background:#f7f9fd}
+.scroll{overflow:auto;max-height:540px}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:10px 0}
 .kpi{border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:#fafbfd}
 .kpi .v{font-size:20px;font-weight:700}
@@ -85,7 +80,8 @@ table.ag td.c0{background:#f7f9fd}
 .drop{border:2px dashed #8d93aa;border-radius:10px;padding:26px;text-align:center;background:#fafbff;cursor:pointer}
 .drop.over{background:#e9efff;border-color:var(--navy)}
 .src{border:1px solid var(--line);border-radius:8px;padding:12px;margin:10px 0;background:#fff}
-.src .sw{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle;margin-right:6px}
+.src.test{border-color:var(--bad);background:#fff8f7}
+.sw{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle;margin-right:6px}
 .thumbs{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
 .thumbs label{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12px;border:1px solid var(--line);padding:6px;border-radius:6px;background:#fafafa}
 .thumbs img{width:150px;border:1px solid #ddd}
@@ -94,51 +90,77 @@ details>summary{cursor:pointer;font-weight:600;color:var(--navy);padding:4px 0}
 .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--ink2);margin:4px 0}
 .legend i{display:inline-block;width:22px;height:0;border-top:2.5px solid;vertical-align:middle;margin-right:5px}
 .legend i.dash{border-top-style:dashed}
+.legend b.box{display:inline-block;width:14px;height:12px;vertical-align:middle;margin-right:5px;border:1px solid #9aa}
 dialog{border:0;border-radius:10px;padding:0;max-width:760px;width:94vw;box-shadow:0 20px 60px rgba(0,0,0,.35)}
 dialog .dh{background:var(--navy);color:#fff;padding:12px 16px;font-weight:700}
 dialog .db{padding:16px}
 dialog::backdrop{background:rgba(10,14,30,.45)}
 #toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#1d2133;color:#fff;padding:10px 16px;border-radius:8px;font-size:14px;display:none;z-index:99;max-width:90vw}
 .muted{color:var(--muted)}
-.mono{font-family:ui-monospace,Consolas,monospace}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px;align-items:start}
+@media (max-width:900px){ .two{grid-template-columns:1fr} }
+.rosewrap{display:grid;grid-template-columns:340px minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:800px){ .rosewrap{grid-template-columns:1fr} }
+.hd-list div{margin:3px 0}
+.chip{display:inline-block;padding:1px 8px;border-radius:4px;font-weight:700;font-size:12.5px;margin-right:6px}
+.chip.ok{background:#d7f0de;color:#0a5c27}.chip.av{background:#ffe5b0;color:#6e4700}.chip.no{background:#f9cfcb;color:#7d1712}
+
+/* ---- Excel-like grid ---- */
+.xg{border-collapse:collapse;user-select:none}
+.xg td{border:1px solid #b9bdc9;padding:0;position:relative}
+.xg td.h{background:var(--head);font-weight:700}
+.xg td.corner{background:#2f3872;color:#fff;font-size:11.5px;padding:4px 6px;white-space:nowrap;text-align:center}
+.xg input{border:0;border-radius:0;width:64px;min-height:31px;text-align:center;padding:3px;font-size:14px;background:transparent;font-weight:inherit;user-select:text}
+.xg td.sel{box-shadow:inset 0 0 0 999px rgba(31,111,235,.16)}
+.xg td.act{outline:2px solid var(--focus);outline-offset:-2px;z-index:2}
+.xg td.empty{background:#fde7e5}
 
 /* ================= REPORT (A4) ================= */
 #report-wrap{background:#80838f;padding:20px;border-radius:8px;overflow:auto}
-.rep{width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;padding:12mm 14mm;font-family:Arial,Helvetica,sans-serif;font-size:10pt;color:#000;box-shadow:0 4px 20px rgba(0,0,0,.3)}
-.rep .rh{display:flex;align-items:center;gap:14px;margin-bottom:8px}
-.rep .rh img{height:52px}
-.rep .rh .disc{font-weight:700;font-size:10.5pt}
-.rep h1{text-align:center;font-size:20pt;border:1px solid #000;padding:6px;margin:6px 0 0}
+.rep{width:210mm;min-height:297mm;margin:0 auto 20px;background:#fff;padding:12mm 13mm;font-family:Arial,Helvetica,sans-serif;font-size:9.5pt;color:#000;box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.rep .rh{display:flex;align-items:center;gap:14px;border-bottom:2px solid #2f3872;padding-bottom:6px}
+.rep .rh img{height:46px}
+.rep .rh .tt{flex:1;text-align:center;font-size:18pt;font-weight:700}
+.rep .rh .rv{font-size:8pt;text-align:right;white-space:nowrap}
 .rep table{border-collapse:collapse;width:100%;margin:0}
-.rep td,.rep th{border:1px solid #000;padding:2px 5px;vertical-align:top;font-size:10pt}
-.rep .sh{background:#c6d9f1;text-align:center;font-weight:700}
-.rep .blk{margin-top:10px;break-inside:auto}
-.rep .cb{font-size:12pt;text-align:center}
-.rep .win{width:100%;margin:3px 0 8px 0}
-.rep .win td,.rep .win th{font-size:9.5pt;padding:1px 6px}
-.rep .win th{background:#eef3fa}
-.rep .win td{white-space:nowrap}
-.rep .ttl{font-weight:700;text-decoration:underline;margin-top:6px}
-.rep .u{text-align:center;width:46px}
-.rep .yes{font-size:14pt;text-align:center;padding:4px}
-.rep .chk{color:#0a7a33}
-.rep .nchk{color:#b3261e}
+.rep td,.rep th{border:1px solid #000;padding:2px 5px;vertical-align:middle;font-size:9pt}
+.rep th{background:#eef3fa;font-weight:700}
+.rep .sh{background:#c6d9f1;text-align:center;font-weight:700;font-size:10pt}
+.rep .blk{margin-top:8px}
+.rep .cb{font-size:12pt;text-align:center;width:7%}
+.rep .c{text-align:center;white-space:nowrap}
+.rep .nw{white-space:nowrap}
+.rep .sec{background:#2f3872;color:#fff;font-weight:700;font-size:11pt;padding:4px 8px;margin-top:10px;break-after:avoid}
+.rep .sub{font-weight:700;font-size:10pt;margin:8px 0 3px;break-after:avoid;color:#1f2656}
+.rep .small{font-size:7.8pt;color:#333}
+.rep .ok{color:#0a7a33;font-weight:700}
+.rep .no{color:#b3261e;font-weight:700}
+.rep tr.nok td{background:#fde7e5}
 .rep img.shot{width:100%;display:block;margin:4px 0;border:1px solid #999}
 .rep .verdict{border:2px solid;padding:6px 10px;font-weight:700;margin:8px 0;text-align:center;font-size:11pt}
 .rep .verdict.ok{border-color:#0a7a33;color:#0a7a33}
 .rep .verdict.bad{border-color:#b3261e;color:#b3261e}
-.rep .small{font-size:8pt;color:#333}
 .rep .pb{break-before:page}
-.rep .ann td,.rep .ann th{font-size:7.5pt;padding:1px 3px;text-align:center}
-.rep .ann tr.nok td{background:#fde7e5}
-.rep .sig td{height:16mm}
 .rep .avoid{break-inside:avoid}
+.rep .wx{display:flex;gap:5px;align-items:flex-start}
+.rep .wx table td,.rep .wx table th{font-size:7pt;padding:0 2px;text-align:center}
+.rep .wx tr.p1 td{background:#dbe7f7}
+.rep .wx tr.p2 td{background:#fff0cc}
+.rep .wx tr.p3 td{background:#eeeeee;color:#555}
+.rep .wx tr td.bad{color:#b3261e;font-weight:700}
+.rep .lg span{display:inline-block;margin-right:10px}
+.rep .lg b{display:inline-block;width:11px;height:9px;border:1px solid #888;vertical-align:middle;margin-right:3px}
+.rep .rose{display:grid;grid-template-columns:62mm 1fr;gap:6mm;align-items:center}
+.rep .sig td{height:15mm}
+.rep .yes{font-size:12pt;text-align:center;padding:3px}
+.rep .chart svg{width:100%}
+.rep .legend{font-size:7.5pt;color:#222;gap:10px}
 
-@page{size:A4;margin:12mm 12mm 14mm 12mm;
-  @bottom-left{content:var(--foot-l,"Cable Weather Assessment");font:9pt Arial}
-  @bottom-center{content:"Rev.1";font:9pt Arial}
-  @bottom-right{content:"Page " counter(page) " / " counter(pages);font:9pt Arial}}
+@page{size:A4;margin:11mm 11mm 13mm 11mm;
+  @bottom-left{content:var(--foot-l,"Cable Weather Assessment");font:8pt Arial}
+  @bottom-center{content:var(--foot-c,"Rev.1");font:8pt Arial}
+  @bottom-right{content:"Page " counter(page) " / " counter(pages);font:8pt Arial}}
 @media print{
   body{background:#fff}
   header.top,nav.steps,section.tab:not(#tab-report),#report-tools,#toast,.noprint{display:none!important}
@@ -155,7 +177,7 @@ dialog::backdrop{background:rgba(10,14,30,.45)}
 <header class="top">
   <div>
     <h1>Weather Assessment</h1>
-    <div class="sub">Analyse Hs/Tp/direction · facteur α · bulletins StormGeo / DTN / Windy · rapport PDF</div>
+    <div class="sub">Analyses Hs/Tp/heading relatif · facteur α · StormGeo / DTN / Windy · rapport signable</div>
   </div>
   <div class="sp"></div>
   <label for="tzSel" class="sr">Fuseau horaire d'affichage</label>
@@ -169,7 +191,7 @@ dialog::backdrop{background:rgba(10,14,30,.45)}
 </header>
 <nav class="steps" role="tablist" aria-label="Étapes">
   <button role="tab" data-tab="project" aria-selected="true"><span class="n">1</span>Projet</button>
-  <button role="tab" data-tab="tables"><span class="n">2</span>Analyses Hs/Tp/Dir</button>
+  <button role="tab" data-tab="tables"><span class="n">2</span>Analyses</button>
   <button role="tab" data-tab="alpha"><span class="n">3</span>Facteur α</button>
   <button role="tab" data-tab="tasks"><span class="n">4</span>Tâches</button>
   <button role="tab" data-tab="weather"><span class="n">5</span>Météo</button>
@@ -178,57 +200,61 @@ dialog::backdrop{background:rgba(10,14,30,.45)}
 </nav>
 <main id="main">
 
-<!-- 1 PROJECT -->
 <section class="tab on" id="tab-project" role="tabpanel">
-  <h2>1 · Informations du projet</h2>
-  <p class="lead">Ces champs remplissent l'en-tête du rapport (modèle « Cable Weather Assessment »).</p>
-  <div class="card head">
-    <div class="grid g3" id="projFields"></div>
-  </div>
+  <h2>1 · Projet</h2>
+  <p class="lead">Ces informations forment l'en-tête du rapport.</p>
+  <div class="card head"><div class="grid g3" id="projFields"></div></div>
   <div class="card">
-    <h3>En-tête et pied de page du rapport</h3>
-    <div class="grid g2" id="projFields2"></div>
-    <div class="row" style="margin-top:12px">
+    <h3>Rapport : titre, pied de page, signataires</h3>
+    <div class="grid g3" id="projFields2"></div>
+    <h4>Signataires</h4>
+    <div id="sigList"></div>
+    <div class="row" style="margin-top:8px"><button class="b s" id="sigAdd">+ Ajouter un signataire</button></div>
+    <h4>Logo</h4>
+    <div class="row">
       <img id="logoPrev" alt="Logo du rapport" style="height:56px;border:1px solid var(--line);padding:4px;background:#fff">
-      <label class="b" style="display:inline-flex;align-items:center;border:1px solid var(--navy);border-radius:6px;padding:8px 14px;cursor:pointer;color:var(--navy);font-weight:600">Changer le logo<input type="file" id="logoFile" accept="image/*" hidden></label>
+      <label class="b">Changer le logo<input type="file" id="logoFile" accept="image/*" hidden></label>
       <button class="b" id="logoReset">Logo par défaut</button>
     </div>
   </div>
 </section>
 
-<!-- 2 TABLES -->
 <section class="tab" id="tab-tables" role="tabpanel">
-  <h2>2 · Tableaux d'analyse (Hs limite selon Tp et direction relative)</h2>
-  <p class="lead">Un tableau par analyse de mouvement / de tenue. Lignes = direction relative des vagues (°), colonnes = Tp (s), cellules = Hs limite (OP<sub>lim</sub>, m). Le « * » de l'analyse est conservé. Une case vide = cap interdit (Hs limite 0).</p>
+  <h2>2 · Analyses : Hs limite selon Tp et heading relatif</h2>
+  <p class="lead">Un tableau par analyse. Ligne d'en-tête = Tp (s), première colonne = heading relatif des vagues (°), cellules = Hs limite OP<sub>lim</sub> (m). Le tableau fonctionne comme Excel : sélection à la souris ou Maj + flèches, <kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>Ctrl</kbd>+<kbd>V</kbd> (un bloc Excel collé sur la case en haut à gauche remplit tout le tableau, en-têtes compris), <kbd>Suppr</kbd> pour effacer. Case vide = heading interdit.</p>
   <div class="row" style="margin-bottom:12px">
-    <label class="f" style="min-width:280px">Tableau affiché<select id="tblSel"></select></label>
-    <button class="b p" id="tblNew">+ Nouveau tableau</button>
+    <label class="f" style="min-width:300px">Analyse affichée<select id="tblSel"></select></label>
+    <button class="b p" id="tblNew">+ Nouvelle analyse</button>
     <button class="b" id="tblDup">Dupliquer</button>
-    <button class="b" id="tblPaste">📋 Coller depuis Excel</button>
     <button class="b d" id="tblDel">Supprimer</button>
   </div>
-  <div class="card head" id="tblEditor"></div>
+  <div class="card head">
+    <div class="two">
+      <div id="tblEditor"></div>
+      <div>
+        <div id="roseConv"></div>
+        <p class="help">Convention unique : 0° = vagues venant de l'avant, 90° = de tribord, 180° = de l'arrière, 270° = de bâbord. Heading relatif = direction d'où viennent les vagues − cap du navire.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- 3 ALPHA -->
 <section class="tab" id="tab-alpha" role="tabpanel">
-  <h2>3 · Facteur α (incertitude de la prévision)</h2>
-  <p class="lead">Hs admissible = OP<sub>lim</sub> × α (DNV-ST-N001 / ex-DNV-OS-H101). α est lu dans la table selon la durée (lead time ou T<sub>POP</sub>) et OP<sub>lim</sub>, avec interpolation linéaire entre colonnes.</p>
+  <h2>3 · Facteur α</h2>
+  <p class="lead">Hs admissible OP<sub>wf</sub> = OP<sub>lim</sub> × α. α est lu selon la durée (ligne « T<sub>pop</sub> ≤ … ») et OP<sub>lim</sub> (colonne), avec interpolation linéaire entre colonnes. Il est calculé automatiquement à l'étape 6.</p>
   <div class="card head" id="alphaEditor"></div>
 </section>
 
-<!-- 4 TASKS -->
 <section class="tab" id="tab-tasks" role="tabpanel">
   <h2>4 · Tâches</h2>
-  <p class="lead">Chaque tâche est liée à un tableau d'analyse (ou à une limite Hs simple), à un cap et à une fenêtre de temps : T<sub>R</sub> = T<sub>POP</sub> + contingence.</p>
+  <p class="lead">Chaque tâche : type d'opération, analyse, heading cible, début et durées. T<sub>R</sub> = T<sub>POP</sub> + contingence. Pour la pose de câble, T<sub>POP</sub> = longueur / vitesse de pose.</p>
   <div class="row" style="margin-bottom:12px"><button class="b p" id="taskNew">+ Ajouter une tâche</button></div>
   <div id="taskList"></div>
 </section>
 
-<!-- 5 WEATHER -->
 <section class="tab" id="tab-weather" role="tabpanel">
   <h2>5 · Bulletins météo</h2>
-  <p class="lead">Déposez le PDF StormGeo ou DTN tel quel : les heures, Hs, Tp, directions et vent sont lus automatiquement. Vous pouvez aussi récupérer un modèle en ligne (Windy, Open-Meteo) ou coller un tableau.</p>
+  <p class="lead">Déposez le PDF StormGeo ou DTN tel quel : heures, Hs, Tp, direction de la mer totale et vent sont lus automatiquement.</p>
   <div class="card head">
     <div class="drop" id="drop" tabindex="0" role="button" aria-label="Importer un bulletin PDF ou CSV">
       <div style="font-size:30px">📄</div>
@@ -243,36 +269,42 @@ dialog::backdrop{background:rgba(10,14,30,.45)}
     <div class="grid g4">
       <label class="f">Latitude<input type="number" step="0.001" id="wxLat"></label>
       <label class="f">Longitude<input type="number" step="0.001" id="wxLon"></label>
-      <label class="f">Clé API Windy <small>(Point Forecast API, stockée sur ce poste uniquement)</small><input type="password" id="windyKey" autocomplete="off"></label>
+      <label class="f">Clé API Windy <small>stockée sur ce poste uniquement</small><input type="password" id="windyKey" autocomplete="off"></label>
     </div>
     <div class="row" style="margin-top:10px">
       <button class="b p" id="btnWindy">🌊 Windy (GFS Wave)</button>
-      <button class="b" id="btnOM">🌐 Open-Meteo (sans clé)</button>
+      <button class="b" id="btnOM">🌐 Open-Meteo (gratuit, sans clé)</button>
       <button class="b" id="btnPasteWx">📋 Coller un tableau</button>
     </div>
-    <div class="help">Les prévisions de modèles (Windy, Open-Meteo) ne remplacent pas un bulletin de prévisionniste pour une MWS ; utilisez-les en complément.</div>
+    <details style="margin-top:10px"><summary>Comment obtenir une clé API Windy ?</summary>
+      <div class="help"><ol>
+        <li>Aller sur <a href="https://api.windy.com/keys" target="_blank" rel="noopener">api.windy.com/keys</a> et créer un compte (ou se connecter avec son compte Windy).</li>
+        <li>Cliquer sur <em>Create new key</em> et choisir l'API <strong>Point Forecast</strong>.</li>
+        <li>Copier la clé et la coller dans le champ ci-dessus.</li>
+      </ol>
+      <strong>Attention :</strong> la clé gratuite « Testing » renvoie volontairement des données mélangées et légèrement modifiées (développement uniquement). Seule la licence <strong>Professional</strong> (payante, ≈ 990 €/an) donne les vraies prévisions. L'application détecte une clé de test et exclut ces données de la vérification.</div>
+    </details>
+    <div class="help">Les modèles (Windy, Open-Meteo) ne remplacent pas le bulletin d'un prévisionniste pour la MWS : utilisez-les en complément.</div>
   </div>
   <div id="srcList"></div>
 </section>
 
-<!-- 6 EVAL -->
 <section class="tab" id="tab-eval" role="tabpanel">
   <h2>6 · Vérification des limites opérationnelles</h2>
-  <p class="lead">Pour chaque heure de la fenêtre : direction relative → OP<sub>lim</sub> lu dans l'analyse → × α → comparé au Hs prévu. Toutes les sources cochées sont vérifiées (la plus pénalisante gouverne).</p>
+  <p class="lead">Mer totale. Pour chaque période : Hs max, Tp moyen et direction moyenne (pondérés par le temps) → heading relatif → OP<sub>lim</sub> dans l'analyse → × α → comparé au Hs max prévu. Si l'état de mer change nettement (Tp ± 2 s ou retournement de direction), la période est découpée en 2 états de mer avec le même α.</p>
   <div class="card" id="evalSettings"></div>
   <div id="evalOut"></div>
 </section>
 
-<!-- 7 REPORT -->
 <section class="tab" id="tab-report" role="tabpanel">
   <div id="report-tools">
     <h2>7 · Rapport PDF</h2>
-    <p class="lead">Aperçu du rapport au format du modèle Word. Cliquez sur <strong>Exporter en PDF</strong> puis choisissez « Enregistrer au format PDF » comme imprimante.</p>
+    <p class="lead">Rapport concis à faire signer par le capitaine et le MWS. Cliquez sur <strong>Exporter en PDF</strong> puis choisissez « Enregistrer au format PDF ».</p>
     <div class="card">
       <div class="grid g3" id="repOpts"></div>
       <div class="row" style="margin-top:12px">
         <button class="b p" id="btnPrint">🖨️ Exporter en PDF</button>
-        <label class="b" style="display:inline-flex;align-items:center;border:1px solid var(--navy);border-radius:6px;padding:8px 14px;cursor:pointer;color:var(--navy);font-weight:600">+ Ajouter une capture<input type="file" id="shotFile" accept="image/*" multiple hidden></label>
+        <label class="b">+ Ajouter une capture<input type="file" id="shotFile" accept="image/*" multiple hidden></label>
         <span class="muted" id="shotInfo"></span>
       </div>
     </div>
@@ -284,7 +316,7 @@ dialog::backdrop{background:rgba(10,14,30,.45)}
 <dialog id="dlg"><div class="dh" id="dlgT"></div><div class="db" id="dlgB"></div></dialog>
 <div id="toast" role="status" aria-live="polite"></div>
 
-<!-- pdf.js 6.2.108 (Mozilla, Apache-2.0) intégré pour fonctionner hors-ligne -->
+<!-- pdf.js (Mozilla, Apache-2.0) intégré pour fonctionner hors ligne -->
 <script type="module">/**
  * @licstart The following is the entire license notice for the
  * JavaScript code in this page
@@ -346,7 +378,7 @@ this.workerSrc)).WorkerMessageHandler})())}}class WorkerTransport{downloadInfoCa
 
 <script type="module">
 /* ========================================================================
-   Weather Assessment – WxPlanner  (v2.0)
+   Weather Assessment – WxPlanner  (v3)
    ======================================================================== */
 const LOGO_DEFAULT = "data:image/png;base64,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";
 const $ = (s, r=document) => r.querySelector(s);
@@ -355,14 +387,16 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 const uid = () => Math.random().toString(36).slice(2, 9);
 const H = 3600e3;
 const SRC_COLORS = ['#2a78d6','#eb6834','#1baf7a','#6250d6'];
-const OP_TYPES = ['1st end CPS','2nd end CPS','1st end pull-in','Cable laying','2nd end pull-in','Rock bag installation','Joint Overboarding + Laying','Jointing'];
+const OP_TYPES = ['Cable laying','1st end CPS','2nd end CPS','1st end pull-in','2nd end pull-in','RB and/or Arche installation (10m from FOU)','RB installation (outside 10m from FOU)','Jointing','Joint overboarding'];
 const PROVIDERS = ['StormGeo','DTN','Windy','Open-Meteo','Autre'];
+const STATUS = {ok:'#2f9e57', av:'#f0a020', no:'#d0392b'};
 
 function toast(msg, ms=3500){ const t=$('#toast'); t.textContent=msg; t.style.display='block'; clearTimeout(toast._t); toast._t=setTimeout(()=>t.style.display='none', ms); }
 const num = v => { if(v===''||v==null) return null; const n=parseFloat(String(v).replace(',', '.')); return isFinite(n)?n:null; };
 const r2 = v => v==null||!isFinite(v) ? '–' : (Math.round(v*100)/100).toFixed(2);
 const r1 = v => v==null||!isFinite(v) ? '–' : (Math.round(v*10)/10).toFixed(1);
 const r0 = v => v==null||!isFinite(v) ? '–' : String(Math.round(v));
+const d3 = v => v==null||!isFinite(v) ? '–' : String(Math.round(norm360(v))%360).padStart(3,'0')+'°';
 
 /* ---------------- time helpers ---------------- */
 const tz = () => S.settings.tz || 'Europe/Paris';
@@ -371,7 +405,7 @@ function parts(t, zone=tz()){
   const o={}; for(const p of f.formatToParts(new Date(t))) o[p.type]=p.value; return o;
 }
 function tzOffsetMs(t, zone){ const p=parts(t,zone); return Date.UTC(+p.year,+p.month-1,+p.day,+p.hour,+p.minute) - Math.floor(t/60000)*60000; }
-function zonedToUtc(str, zone=tz()){ // 'YYYY-MM-DDTHH:MM'
+function zonedToUtc(str, zone=tz()){
   const m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(str||''); if(!m) return null;
   const guess = Date.UTC(+m[1],+m[2]-1,+m[3],+m[4],+m[5]);
   let t = guess - tzOffsetMs(guess, zone); t = guess - tzOffsetMs(t, zone); return t;
@@ -382,63 +416,79 @@ function fmtFull(t){ if(t==null) return '–'; const p=parts(t); return `${p.day
 function fmtH(t){ const p=parts(t); return `${p.day}/${p.month} ${p.hour}h${p.minute==='00'?'':p.minute}`; }
 const tzLabel = () => tz()==='UTC' ? 'UTC' : 'heure locale';
 const TZ_OFF = {UTC:0,GMT:0,Z:0,WET:0,CET:1,BST:1,WEST:1,CEST:2,EET:2,EEST:3};
+function hhmm(h){ if(h==null||!isFinite(h)) return '–'; const m=Math.round(h*60); return `${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`; }
 
 /* ---------------- state ---------------- */
+const ALPHA_PROJECT = {name:'Table α projet – Planned Operation Period (OPlim)', cols:[1,2,4,6],
+  rows:[{h:4,a:[0.80,0.85,0.89,0.89]},{h:12,a:[0.69,0.81,0.85,0.85]},{h:24,a:[0.64,0.75,0.77,0.80]},{h:36,a:[0.61,0.69,0.71,0.75]},{h:48,a:[0.59,0.67,0.69,0.72]},{h:72,a:[0.54,0.61,0.67,0.70]}]};
+const ALPHA_DNV = {name:'DNV-OS-H101 Tab. 4-1 – cas de base (Level C)', cols:[1,2,4,6],
+  rows:[{h:12,a:[0.65,0.76,0.79,0.80]},{h:24,a:[0.63,0.73,0.76,0.78]},{h:36,a:[0.62,0.71,0.73,0.76]},{h:48,a:[0.60,0.68,0.71,0.74]},{h:72,a:[0.55,0.63,0.68,0.72]}]};
 let S;
+function exampleTable(){
+  const base=[1,1.5,2,2.5,3,3,3];
+  const st=(vals,plain=[])=>vals.map((x,i)=>x.toFixed(2)+(plain.includes(i)?'':'*'));
+  const rows={0:st(base),30:st(base),60:st([1,1.5,2,2.5,2.75,3,3],[4]),90:st(base),120:st(base),150:st(base),180:st([1,1.5,2,2.5,2.75,3,3],[4]),210:st(base),240:st([1,1.5,2,2.5,3,2.75,3],[5]),270:st(base),300:st([1,1.5,2,2.25,3,3,3],[3]),330:st([1,1.5,2,2.5,3,3,2.75],[6])};
+  const dirs=[0,30,60,90,120,150,180,210,240,270,300,330];
+  return {id:uid(),name:'Analyse exemple (Wdir/Tp)',interp:'cons',sym:false,tps:['4','5','6','7','8','9','10'],dirs:dirs.map(String),cells:dirs.map(d=>rows[d])};
+}
+function newTask(over={}){
+  return Object.assign({id:uid(),op:'Jointing',label:'',tableId:'',oplim:null,heading:0,start:Math.ceil(Date.now()/H)*H,tpop:12,cont:6,layLength:null,laySpeed:null,windMax:null,include:true,notes:''},over);
+}
 function defaultState(){
-  const tid = uid();
-  const v = (a)=>a.map(String);
-  const base = [1.00,1.50,2.00,2.50,3.00,3.00,3.00];
-  const star = (vals, plain=[]) => vals.map((x,i)=> x.toFixed(2) + (plain.includes(i)?'':'*'));
-  const rows = {
-    0:star(base),30:star(base),60:star([1,1.5,2,2.5,2.75,3,3],[4]),90:star(base),120:star(base),150:star(base),
-    180:star([1,1.5,2,2.5,2.75,3,3],[4]),210:star(base),240:star([1,1.5,2,2.5,3,2.75,3],[5]),270:star(base),
-    300:star([1,1.5,2,2.25,3,3,3],[3]),330:star([1,1.5,2,2.5,3,3,2.75],[6])
-  };
-  const now = Date.now(); const start = Math.ceil(now/H)*H;
+  const t = exampleTable(); const start = Math.ceil(Date.now()/H)*H;
   return {
-    v:2,
-    project:{title:'Cable Weather Assessment',project:'',location:'',vessel:'',employer:'',date:'',time:'',preparedBy:'',
-      disclaimer:'DISCLAIMER : This document SHALL always be used in conjunction with the Adverse Weather Procedure',
-      footer:'Cable Weather Assessment', rev:'Rev.1', cableLength:'N/A', laySpeed:'N/A', logo:null,
-      sigs:[{role:'OIM',name:''},{role:'Client',name:''},{role:'Master',name:''}]},
-    tables:[{id:tid,name:'Analyse exemple (Wdir/Tp)',conv:'head0',interp:'cons',starNote:'* valeur annotée dans l\'analyse',
-      tps:v([4,5,6,7,8,9,10]), dirs:v([0,30,60,90,120,150,180,210,240,270,300,330]),
-      cells:[0,30,60,90,120,150,180,210,240,270,300,330].map(d=>rows[d])}],
-    alpha:{name:'DNV-OS-H101 Tab. 4-1 / DNV-ST-N001 – cas de base (1 prévision, Level C)',mode:'lead',
-      cols:[1,2,4,6], rows:[{h:12,a:[0.65,0.76,0.79,0.80]},{h:24,a:[0.63,0.73,0.76,0.78]},{h:36,a:[0.62,0.71,0.73,0.76]},{h:48,a:[0.60,0.68,0.71,0.74]},{h:72,a:[0.55,0.63,0.68,0.72]}]},
+    v:3,
+    project:{title:'Cable Weather Assessment',project:'',location:'',vessel:'',employer:'',date:'',time:'',preparedBy:'',footer:'Cable Weather Assessment',rev:'Rev.1',logo:null,
+      sigs:[{role:'Master (capitaine)',name:''},{role:'MWS (Marine Warranty Surveyor)',name:''}]},
+    tables:[t],
+    alpha:JSON.parse(JSON.stringify(ALPHA_PROJECT)),
     tasks:[
-      {id:uid(),name:'Standby pendant jointing',op:'Jointing',tableId:tid,oplim:null,hMode:'fixed',heading:15,heading2:15,tpop:72,cont:36,start:start,windMax:12,alphaOv:null,include:true,notes:''},
-      {id:uid(),name:'Joint overboarding & laying',op:'Joint Overboarding + Laying',tableId:'',oplim:3,hMode:'range',heading:350,heading2:15,tpop:24,cont:12,start:start+24*H,windMax:12,alphaOv:null,include:true,notes:'Valeurs à confirmer'}
+      newTask({op:'Jointing',label:'Standby pendant jointing',tableId:t.id,heading:15,tpop:72,cont:36,start,windMax:12}),
+      newTask({op:'Joint overboarding',label:'',tableId:t.id,heading:0,tpop:6,cont:3,start:start+72*H,windMax:12,notes:'Valeurs à confirmer'})
     ],
-    sources:[],
-    shots:[],
-    settings:{tz:'Europe/Paris',dirMode:'dominant',tpOut:'clamp',alphaWind:false,lat:47.158,lon:-2.694,annex:true,chart:true,pages:true}
+    sources:[], shots:[],
+    settings:{tz:'Europe/Paris',method:'global',alphaBasis:'TR',bandOrigin:'start',dTp:2,dDir:60,avoid:90,tpOut:'clamp',lat:47.158,lon:-2.694,
+      rep:{wx:true,chart:true,rose:true,pages:false,annex:false}}
   };
+}
+function migrate(o){
+  if(!o) return defaultState();
+  if(o.v===3) return o;
+  if(o.v===2){
+    const d=defaultState();
+    d.project=Object.assign(d.project, {title:o.project.title,project:o.project.project,location:o.project.location,vessel:o.project.vessel,employer:o.project.employer,date:o.project.date,time:o.project.time,preparedBy:o.project.preparedBy,footer:o.project.footer,rev:o.project.rev,logo:o.project.logo});
+    d.tables=(o.tables||[]).map(t=>({id:t.id,name:t.name,interp:t.interp,sym:false,tps:t.tps,dirs:t.dirs,cells:t.cells}));
+    if(!d.tables.length) d.tables=[exampleTable()];
+    const map={'Joint Overboarding + Laying':'Joint overboarding','Rock bag installation':'RB installation (outside 10m from FOU)'};
+    d.tasks=(o.tasks||[]).map(k=>newTask({op:map[k.op]||(OP_TYPES.includes(k.op)?k.op:'Jointing'),label:k.name,tableId:k.tableId,oplim:k.oplim,heading:k.heading,start:k.start,tpop:k.tpop,cont:k.cont,windMax:k.windMax,include:k.include,notes:k.notes}));
+    d.sources=o.sources||[]; d.shots=o.shots||[];
+    return d;
+  }
+  return defaultState();
 }
 function save(){
-  try{ localStorage.setItem('wxassess_v2', JSON.stringify(S)); }
-  catch(e){ // quota: drop page images from autosave
-    try{ const lite = JSON.parse(JSON.stringify(S)); lite.sources.forEach(s=>s.pages=[]); lite.shots=[]; localStorage.setItem('wxassess_v2', JSON.stringify(lite)); toast('Sauvegarde auto sans les images (trop volumineuses) – utilisez 💾 Enregistrer.'); }catch(_){}
-  }
+  try{ localStorage.setItem('wxassess_v3', JSON.stringify(S)); }
+  catch(e){ try{ const lite=JSON.parse(JSON.stringify(S)); lite.sources.forEach(s=>s.pages=[]); lite.shots=[]; localStorage.setItem('wxassess_v3', JSON.stringify(lite)); }catch(_){} }
 }
 function load(){
-  try{ const j = localStorage.getItem('wxassess_v2'); if(j){ const o=JSON.parse(j); if(o && o.v===2) return o; } }catch(e){}
+  try{ let j=localStorage.getItem('wxassess_v3'); if(j) return migrate(JSON.parse(j)); j=localStorage.getItem('wxassess_v2'); if(j) return migrate(JSON.parse(j)); }catch(e){}
   return defaultState();
 }
 S = load();
-S.settings = Object.assign(defaultState().settings, S.settings||{});
+{ const d=defaultState().settings; S.settings=Object.assign({},d,S.settings||{}); S.settings.rep=Object.assign({},d.rep,S.settings.rep||{}); }
 
 /* ======================================================================
    CALCULATION ENGINE
    ====================================================================== */
 function norm360(a){ return ((a%360)+360)%360; }
-function relDir(waveFrom, heading, conv){
-  // head0 : 0° = vagues venant de l'avant (étrave), 90° = venant de tribord
-  // stern0: 0° = vagues venant de l'arrière (convention "going to")
-  const r = norm360(waveFrom - heading);
-  return conv==='stern0' ? norm360(r+180) : r;
+function circDiff(a,b){ const d=Math.abs(norm360(a)-norm360(b))%360; return d>180?360-d:d; }
+function circMean(dirs, w){
+  let x=0,y=0; dirs.forEach((d,i)=>{ if(d==null) return; const ww=w?w[i]:1; x+=ww*Math.cos(d*Math.PI/180); y+=ww*Math.sin(d*Math.PI/180); });
+  if(Math.abs(x)<1e-12 && Math.abs(y)<1e-12) return dirs.find(d=>d!=null) ?? null;
+  return norm360(Math.atan2(y,x)*180/Math.PI);
 }
+// Rosace : 0° = vagues venant de l'avant, 90° = tribord, 180° = arrière, 270° = bâbord
+function relDir(waveFrom, heading){ return norm360(waveFrom - heading); }
 function cellVal(str){
   const s = String(str??'').trim();
   if(!s || s==='-' || /^null$/i.test(s)) return {v:null, star:false};
@@ -446,148 +496,195 @@ function cellVal(str){
 }
 function tableLookup(tbl, rel, tp){
   const flags=[];
+  if(tbl.sym && rel>180) rel = 360-rel;
   const dirs = tbl.dirs.map(num), tps = tbl.tps.map(num);
-  // directions (cyclic)
-  const order = dirs.map((d,i)=>({d:norm360(d),i})).sort((a,b)=>a.d-b.d);
+  const order = dirs.map((d,i)=>({d:d==null?null:norm360(d),i})).filter(o=>o.d!=null).sort((a,b)=>a.d-b.d);
+  const tOrd = tps.map((t,i)=>({t,i})).filter(o=>o.t!=null).sort((a,b)=>a.t-b.t);
+  if(!order.length || !tOrd.length) return {v:0, flags:['analyse vide'], star:false};
   let r0, r1, wr=0;
   const ex = order.find(o=>Math.abs(o.d-rel)<1e-6);
   if(ex){ r0=r1=ex.i; }
   else{
-    let lo = null, hi=null;
+    let lo=null, hi=null;
     for(const o of order){ if(o.d<rel) lo=o; if(o.d>rel && !hi) hi=o; }
-    if(!lo) lo = order[order.length-1]; if(!hi) hi = order[0];
+    if(tbl.sym){ if(!lo) lo=order[0]; if(!hi) hi=order[order.length-1]; }
+    else { if(!lo) lo=order[order.length-1]; if(!hi) hi=order[0]; }
     r0=lo.i; r1=hi.i;
     const dlo = lo.d<=rel ? lo.d : lo.d-360, dhi = hi.d>=rel ? hi.d : hi.d+360;
-    wr = (rel-dlo)/(dhi-dlo||1);
+    wr = (rel-dlo)/((dhi-dlo)||1);
   }
-  // Tp
-  const tOrd = tps.map((t,i)=>({t,i})).filter(o=>o.t!=null).sort((a,b)=>a.t-b.t);
   let c0,c1,wc=0;
   if(tp==null){ flags.push('Tp manquant'); c0=c1=tOrd[0].i; }
-  else if(tp < tOrd[0].t - 1e-9){ flags.push('Tp < table'); if(S.settings.tpOut==='reject') return {v:0,flags,star:false}; c0=c1=tOrd[0].i; }
-  else if(tp > tOrd[tOrd.length-1].t + 1e-9){ flags.push('Tp > table'); if(S.settings.tpOut==='reject') return {v:0,flags,star:false}; c0=c1=tOrd[tOrd.length-1].i; }
+  else if(tp < tOrd[0].t - 1e-9){ flags.push('Tp < analyse'); if(S.settings.tpOut==='reject') return {v:0,flags,star:false}; c0=c1=tOrd[0].i; }
+  else if(tp > tOrd[tOrd.length-1].t + 1e-9){ flags.push('Tp > analyse'); if(S.settings.tpOut==='reject') return {v:0,flags,star:false}; c0=c1=tOrd[tOrd.length-1].i; }
   else{
     const ext = tOrd.find(o=>Math.abs(o.t-tp)<1e-9);
     if(ext){ c0=c1=ext.i; }
     else { let k=0; while(tOrd[k+1].t<tp) k++; c0=tOrd[k].i; c1=tOrd[k+1].i; wc=(tp-tOrd[k].t)/(tOrd[k+1].t-tOrd[k].t); }
   }
-  const g = (r,c)=>cellVal(tbl.cells[r]?.[c]);
-  const cs = [g(r0,c0),g(r0,c1),g(r1,c0),g(r1,c1)];
+  const g=(r,c)=>cellVal(tbl.cells[r]?.[c]);
+  const cs=[g(r0,c0),g(r0,c1),g(r1,c0),g(r1,c1)];
   if(cs.some(c=>c.v==null)) flags.push('case vide = interdit');
-  const vv = cs.map(c=>c.v??0);
-  let v;
-  if(tbl.interp==='lin'){ v = (vv[0]*(1-wc)+vv[1]*wc)*(1-wr) + (vv[2]*(1-wc)+vv[3]*wc)*wr; }
-  else v = Math.min(...vv);
+  const vv=cs.map(c=>c.v??0);
+  const v = tbl.interp==='lin' ? (vv[0]*(1-wc)+vv[1]*wc)*(1-wr)+(vv[2]*(1-wc)+vv[3]*wc)*wr : Math.min(...vv);
   return {v, flags, star:cs.some(c=>c.star)};
 }
-function alphaLookup(oplim, leadH){
-  const A = S.alpha; const flags=[];
-  if(!A.rows.length) return {a:1,flags:['table α vide']};
-  let row = A.rows.find(r=>leadH <= r.h + 1e-9);
-  if(!row){ row = A.rows[A.rows.length-1]; flags.push(`durée > ${row.h} h`); }
-  const cols = A.cols.map(Number);
-  let a;
-  if(oplim <= cols[0]) a=row.a[0];
-  else if(oplim >= cols[cols.length-1]) a=row.a[cols.length-1];
-  else { let k=0; while(cols[k+1]<oplim) k++; const w=(oplim-cols[k])/(cols[k+1]-cols[k]); a=row.a[k]*(1-w)+row.a[k+1]*w; }
-  return {a, flags, row};
+function alphaRowFor(h){
+  const A=S.alpha; let row=A.rows.find(r=>h <= r.h + 1e-9), over=false;
+  if(!row){ row=A.rows[A.rows.length-1]; over=true; }
+  return {row, over};
 }
-function headingsOf(task){
-  if(task.hMode!=='range') return [norm360(+task.heading||0)];
-  const a=norm360(+task.heading||0), b=norm360(+task.heading2||0); const span=norm360(b-a); const out=[];
-  for(let d=0; d<span; d+=5) out.push(norm360(a+d)); out.push(b); return out;
+function alphaAt(oplim, row){
+  const cols=S.alpha.cols.map(Number);
+  if(oplim<=cols[0]) return row.a[0];
+  if(oplim>=cols[cols.length-1]) return row.a[cols.length-1];
+  let k=0; while(cols[k+1]<oplim) k++;
+  const w=(oplim-cols[k])/(cols[k+1]-cols[k]); return row.a[k]*(1-w)+row.a[k+1]*w;
 }
-function headingText(task){ return task.hMode==='range' ? `Entre ${r0(task.heading)}° et ${r0(task.heading2)}°` : `${r0(task.heading)}°`; }
-function waveDirs(p){
-  if(S.settings.dirMode==='all' && p.comps && p.comps.length) return p.comps.filter(c=>c.dir!=null && c.h!=null && c.h>=0.3).map(c=>c.dir).concat(p.dir!=null?[p.dir]:[]);
-  return p.dir!=null ? [p.dir] : [];
+const taskName = k => k.label?.trim() || k.op;
+function tpopOf(k){
+  if(k.op==='Cable laying'){ const L=num(k.layLength), V=num(k.laySpeed); if(L!=null && V) return L/V; }
+  return num(k.tpop)||0;
 }
-function evalPoint(task, src, p){
-  const tbl = S.tables.find(t=>t.id===task.tableId);
-  const flags = new Set(); let oplim=Infinity, rel=null, star=false, govHead=null, govDir=null;
-  if(tbl){
-    const dirs = waveDirs(p);
-    if(!dirs.length){ flags.add('direction manquante'); oplim=0; }
-    for(const h of headingsOf(task)) for(const d of dirs){
-      const rd = relDir(d, h, tbl.conv); const L = tableLookup(tbl, rd, p.tp);
-      L.flags.forEach(f=>flags.add(f));
-      if(L.v < oplim){ oplim=L.v; rel=rd; star=L.star; govHead=h; govDir=d; }
-    }
-  } else { oplim = num(task.oplim) ?? 0; if(p.dir!=null){ govDir=p.dir; rel=relDir(p.dir, headingsOf(task)[0], 'head0'); } }
-  if(!isFinite(oplim)) oplim=0;
-  const TR = (+task.tpop||0)+(+task.cont||0);
-  const lead = S.alpha.mode==='tpop' ? TR : Math.max(0,(p.t - src.issued)/H);
-  let alpha, aflags=[];
-  if(num(task.alphaOv)!=null){ alpha = num(task.alphaOv); }
-  else { const A = alphaLookup(oplim, lead); alpha=A.a; aflags=A.flags; }
-  aflags.forEach(f=>flags.add(f));
-  const allow = oplim*alpha;
-  const okHs = p.hs!=null && p.hs <= allow + 1e-9;
-  let windLim = num(task.windMax); if(windLim!=null && S.settings.alphaWind) windLim*=alpha;
-  const okW = windLim==null || p.ws==null || p.ws <= windLim + 1e-9;
-  return {t:p.t, hs:p.hs, tp:p.tp, dir:govDir, rel, head:govHead, oplim, star, alpha, lead, allow, ws:p.ws, windLim,
-    util: allow>0 ? p.hs/allow : Infinity, okHs, okW, ok: okHs && okW, flags:[...flags]};
-}
-function pointsIn(src, a, b){
-  const rows = src.rows; const out=[]; let prev=null;
-  for(const p of rows){ if(p.t < a) prev=p; else if(p.t<=b) out.push(p); }
-  if(prev && (!out.length || out[0].t>a)) out.unshift(prev);
-  return out;
-}
-function evalTaskSource(task, src){
-  const TR = (+task.tpop||0)+(+task.cont||0); const a=task.start, b=task.start+TR*H;
-  const all = src.rows.map(p=>evalPoint(task, src, p));
-  const inWin = pointsIn(src,a,b).map(p=>all[src.rows.indexOf(p)]);
-  const last = src.rows.length ? src.rows[src.rows.length-1].t : null;
-  const covered = last!=null && last >= b && src.rows[0].t <= a + 3*H;
-  // Wdw : durée continue OK depuis le début
-  let wdwEnd = null, broken=false;
-  const fromStart = all.filter(r=>r.t >= a - 1e-6 || r===inWin[0]);
-  for(const r of fromStart){ if(r.t < a && r!==inWin[0]) continue; if(!r.ok){ wdwEnd = Math.max(a, r.t); broken=true; break; } wdwEnd = r.t; }
-  const wdw = wdwEnd==null ? 0 : Math.max(0,(wdwEnd-a)/H);
-  return {src, all, inWin, covered, wdw, wdwOpen:!broken, ok: covered && inWin.length>0 && inWin.every(r=>r.ok),
-    maxHs: Math.max(...inWin.map(r=>r.hs??0)), minAllow: Math.min(...inWin.map(r=>r.allow)), maxUtil: Math.max(...inWin.map(r=>r.util)),
-    maxWs: Math.max(...inWin.map(r=>r.ws??0))};
-}
-function usedSources(){ return S.sources.filter(s=>s.use && s.rows.length); }
-function evalTask(task){
-  const per = usedSources().map(s=>evalTaskSource(task,s));
-  const TR = (+task.tpop||0)+(+task.cont||0);
-  const ok = per.length>0 && per.every(r=>r.ok);
-  const wdw = per.length ? Math.min(...per.map(r=>r.wdw)) : 0;
-  const wdwOpen = per.length && per.every(r=>r.wdwOpen);
-  return {task, per, TR, ok, wdw, wdwOpen, trOk: per.length>0 && TR <= wdw + 1e-9, bands: bandsOf(task, per)};
-}
-function bandsOf(task, per){ return per.map(r=>({src:r.src, bands:bandsOne(task,[r])})); }
-function bandsOne(task, per){
-  const TR=(+task.tpop||0)+(+task.cont||0), a=task.start, b=a+TR*H;
-  if(!per.length) return [];
-  // bornes : changements de ligne de la table α (lead time depuis l'émission du bulletin)
-  let cuts = new Set([a,b]);
-  if(S.alpha.mode==='lead' && num(task.alphaOv)==null) for(const r of per) for(const row of S.alpha.rows){ const c=r.src.issued+row.h*H; if(c>a && c<b) cuts.add(c); }
-  cuts=[...cuts].sort((x,y)=>x-y);
-  const out=[];
-  for(let i=0;i<cuts.length-1;i++){
-    const ba=cuts[i], bb=cuts[i+1]; let gov=null;
-    for(const r of per){
-      const pts = r.inWin.filter(x=>x.t>=ba-1e-6 && x.t<=bb+1e-6 && !(x.t===bb && i<cuts.length-2));
-      const use = pts.length? pts : r.inWin.filter(x=>x.t<=ba).slice(-1);
-      if(!use.length) continue;
-      const worst = use.reduce((m,x)=> x.util>m.util?x:m, use[0]);
-      const minA = use.reduce((m,x)=> x.allow<m.allow?x:m, use[0]);
-      const cand = {a:ba,b:bb,src:r.src,worst,minA,maxHs:Math.max(...use.map(x=>x.hs??0)),maxWs:Math.max(...use.map(x=>x.ws??0)),ok:use.every(x=>x.ok),n:use.length};
-      if(!gov || cand.worst.util>gov.worst.util) gov=cand;
-    }
-    if(gov) out.push(gov);
+const trOf = k => tpopOf(k) + (num(k.cont)||0);
+
+/* forecast samples : each point represents the interval between the mid-points to its neighbours */
+function samplesIn(src, a, b){
+  const R=src.rows, n=R.length, out=[];
+  for(let i=0;i<n;i++){
+    const t=R[i].t;
+    const lo = i>0 ? (R[i-1].t+t)/2 : t - (n>1?(R[1].t-t)/2:H/2);
+    const hi = i<n-1 ? (t+R[i+1].t)/2 : t + (n>1?(t-R[i-1].t)/2:H/2);
+    const A=Math.max(lo,a), B=Math.min(hi,b), w=Math.max(0,B-A);
+    if(w>0 || (t>=a && t<=b)) out.push({p:R[i], t, lo:A, hi:B, w});
   }
   return out;
 }
+function seaStats(sm){
+  const tw = sm.reduce((s,x)=>s+x.w,0);
+  const W = sm.map(x=> tw>0 ? x.w : 1);
+  const tpS = sm.map((x,i)=>x.p.tp!=null?[x.p.tp,W[i]]:null).filter(Boolean);
+  const tpMean = tpS.length ? tpS.reduce((s,[v,w])=>s+v*w,0)/tpS.reduce((s,[,w])=>s+w,0) : null;
+  const dirMean = circMean(sm.map(x=>x.p.dir), W);
+  const hsMaxPt = sm.reduce((m,x)=> (x.p.hs??-1)>(m?.p.hs??-1)?x:m, null);
+  return {a:sm[0].lo, b:sm[sm.length-1].hi, n:sm.length, hsMax:hsMaxPt?.p.hs??null, hsMaxT:hsMaxPt?.t, tpMean, dirMean,
+    tpMin:Math.min(...sm.map(x=>x.p.tp??Infinity)), tpMax:Math.max(...sm.map(x=>x.p.tp??-Infinity)),
+    wsMax:Math.max(...sm.map(x=>x.p.ws??0)), samples:sm};
+}
+function dirRange(sm){ let m=0; for(let i=0;i<sm.length;i++) for(let j=i+1;j<sm.length;j++){ const a=sm[i].p.dir,b=sm[j].p.dir; if(a!=null&&b!=null) m=Math.max(m,circDiff(a,b)); } return m; }
+/* découpe en 1 ou 2 états de mer */
+function splitStates(sm){
+  if(!sm.length) return [];
+  const st = seaStats(sm);
+  const dTp=+S.settings.dTp||2, dDir=+S.settings.dDir||60;
+  const tpR = st.tpMax-st.tpMin, dR = dirRange(sm);
+  st.split=false;
+  if(sm.length<2 || !((isFinite(tpR) && tpR>dTp+1e-9) || dR>dDir+1e-9)) return [st];
+  let best=null;
+  for(let k=1;k<sm.length;k++){
+    const s1=seaStats(sm.slice(0,k)), s2=seaStats(sm.slice(k));
+    const sc = Math.abs((s1.tpMean??0)-(s2.tpMean??0))/dTp + (s1.dirMean!=null&&s2.dirMean!=null?circDiff(s1.dirMean,s2.dirMean):0)/dDir;
+    if(!best || sc>best.sc) best={sc,s1,s2};
+  }
+  const ds = Math.abs((best.s1.tpMean??0)-(best.s2.tpMean??0)), dd = circDiff(best.s1.dirMean??0,best.s2.dirMean??0);
+  if(ds<=dTp && dd<=dDir) return [st];   // la variation n'est pas un vrai changement d'état de mer
+  best.s1.split=best.s2.split=true;
+  best.s1.reason=best.s2.reason = [ds>dTp?`Tp ${r1(best.s1.tpMean)}→${r1(best.s2.tpMean)} s`:'', dd>dDir?`direction ${d3(best.s1.dirMean)}→${d3(best.s2.dirMean)}`:''].filter(Boolean).join(', ');
+  return [best.s1,best.s2];
+}
+/* périodes α (méthode globale ou discrétisée) */
+function periodsOf(task, src, method){
+  const a=task.start, TP=tpopOf(task), TR=trOf(task), b=a+TR*H;
+  const per=[];
+  if(method==='global'){
+    const basisH = S.settings.alphaBasis==='TPOP' ? TP : TR;
+    const {row, over} = alphaRowFor(basisH);
+    per.push({a, b, row, over, basisH, label:`T${S.settings.alphaBasis==='TPOP'?'pop':'R'} = ${r0(basisH)} h → ligne T<sub>pop</sub> ≤ ${row.h} h`});
+  } else {
+    const org = S.settings.bandOrigin==='issue' ? src.issued : a;
+    let prev=a; const rows=S.alpha.rows;
+    for(const row of rows){
+      const end = org + row.h*H; if(end<=prev+1e-6) continue;
+      const e = Math.min(end,b); per.push({a:prev,b:e,row,over:false,label:`T<sub>pop</sub> ≤ ${row.h} h`}); prev=e; if(e>=b) break;
+    }
+    if(prev<b) per.push({a:prev,b,row:rows[rows.length-1],over:true,label:`&gt; ${rows[rows.length-1].h} h (ligne ${rows[rows.length-1].h} h)`});
+  }
+  for(const p of per){ p.states = splitStates(samplesIn(src,p.a,p.b)); }
+  return per.filter(p=>p.states.length);
+}
+/* applique un cap à un état de mer */
+function stateAt(task, st, row, heading){
+  const tbl = S.tables.find(t=>t.id===task.tableId);
+  let oplim, rel=null, star=false, flags=[];
+  if(st.dirMean!=null) rel = relDir(st.dirMean, heading);
+  if(tbl){
+    if(rel==null){ oplim=0; flags.push('direction manquante'); }
+    else { const L=tableLookup(tbl, rel, st.tpMean); oplim=L.v; star=L.star; flags=L.flags; }
+  } else oplim = num(task.oplim) ?? 0;
+  const alpha = alphaAt(oplim, row);
+  const opwf = oplim*alpha;
+  const okHs = st.hsMax!=null && st.hsMax <= opwf + 1e-9;
+  const wl = num(task.windMax);
+  const okW = wl==null || st.wsMax <= wl + 1e-9;
+  return {rel, oplim, star, flags, alpha, opwf, okHs, okW, ok:okHs&&okW, util: opwf>0 ? st.hsMax/opwf : Infinity, windLim:wl};
+}
+function evalSrc(task, src, method){
+  const a=task.start, TR=trOf(task), b=a+TR*H, h=norm360(+task.heading||0);
+  const periods = periodsOf(task, src, method);
+  periods.forEach(p=>p.states.forEach(st=>Object.assign(st, stateAt(task, st, p.row, h))));
+  const flat = periods.flatMap(p=>p.states.map(st=>({p,st})));
+  const covered = src.rows.length>0 && src.rows[0].t <= a + 1e-6 + H && src.rows[src.rows.length-1].t >= b - 1e-6;
+  // Wdw : depuis le début, jusqu'au premier dépassement de OPwf (au-delà de T_R : dernier OPwf)
+  let wdwEnd=null, open=true;
+  const lastSt = flat.length ? flat[flat.length-1].st : null;
+  for(const r of src.rows){
+    if(r.t < a - 1e-6) continue;
+    const f = flat.find(x=>r.t>=x.st.a-1e-6 && r.t<=x.st.b+1e-6);
+    const st = f ? f.st : lastSt; if(!st) break;
+    const lim = st.opwf, wl=st.windLim;
+    if((r.hs??0) > lim+1e-9 || (wl!=null && (r.ws??0) > wl+1e-9)){ wdwEnd=r.t; open=false; break; }
+    wdwEnd=r.t;
+  }
+  const wdw = wdwEnd==null?0:Math.max(0,(wdwEnd-a)/H);
+  const ok = covered && flat.length>0 && flat.every(x=>x.st.ok);
+  const maxUtil = Math.max(0,...flat.map(x=>x.st.util));
+  return {src, method, periods, flat, covered, wdw, wdwOpen:open && (src.rows.at(-1)?.t??0) >= b, ok, maxUtil,
+    hsMax:Math.max(...flat.map(x=>x.st.hsMax??0)), opwfMin:Math.min(...flat.map(x=>x.st.opwf)), wsMax:Math.max(...flat.map(x=>x.st.wsMax??0))};
+}
+function usedSources(){ return S.sources.filter(s=>s.use && !s.test && s.rows.length); }
+function evalTask(task, method=S.settings.method){
+  const per = usedSources().map(s=>evalSrc(task,s,method));
+  const TP=tpopOf(task), TR=trOf(task);
+  const gov = per.slice().sort((x,y)=> (x.ok===y.ok? y.maxUtil-x.maxUtil : (x.ok?1:-1)))[0] || null;
+  const ok = per.length>0 && per.every(r=>r.ok);
+  const wdw = per.length ? Math.min(...per.map(r=>r.wdw)) : 0;
+  return {task, method, per, gov, TP, TR, ok, wdw, wdwOpen: per.length && per.every(r=>r.wdwOpen), trOk: per.length>0 && per.every(r=>r.covered) && wdw >= TR - 1e-6,
+    nonRestricted: TP>72, rose: headingSweep(task, per)};
+}
+/* balayage des caps : utilisation max (toutes sources, toutes périodes) */
+function headingSweep(task, per){
+  const out=[]; const av=(+S.settings.avoid||90)/100;
+  for(let h=0; h<360; h+=5){
+    let u=0;
+    for(const r of per) for(const p of r.periods) for(const st of p.states){ const x=stateAt(task, st, p.row, h); u=Math.max(u, x.util); }
+    out.push({h, u, cls: !per.length?'na' : u>1+1e-9?'no' : u>av?'av':'ok'});
+  }
+  return out;
+}
+function headingRanges(rose, cls){
+  const n=rose.length, on=rose.map(r=>r.cls===cls);
+  if(on.every(Boolean)) return 'tous'; if(!on.some(Boolean)) return '';
+  const res=[];
+  for(let i=0;i<n;i++){ if(on[i] && !on[(i-1+n)%n]){ let j=i; while(on[(j+1)%n]) j=(j+1)%n; res.push(i===j?d3(rose[i].h):`${d3(rose[i].h)}–${d3(rose[j].h)}`); } }
+  return res.join(', ');
+}
+function headingClass(ev){ const h=norm360(+ev.task.heading||0); const r=ev.rose.reduce((m,x)=>circDiff(x.h,h)<circDiff(m.h,h)?x:m, ev.rose[0]); return r?.cls||'na'; }
 function findFirstWindow(task){
-  const srcs = usedSources(); if(!srcs.length) return null;
-  const TR=(+task.tpop||0)+(+task.cont||0);
-  const t0 = Math.max(...srcs.map(s=>s.rows[0].t)), t1 = Math.min(...srcs.map(s=>s.rows[s.rows.length-1].t)) - TR*H;
-  const keep = task.start;
-  for(let t=Math.ceil(t0/H)*H; t<=t1; t+=H){ task.start=t; if(evalTask(task).ok){ return t; } }
+  const srcs=usedSources(); if(!srcs.length) return null;
+  const TR=trOf(task);
+  const t0=Math.max(...srcs.map(s=>s.rows[0].t)), t1=Math.min(...srcs.map(s=>s.rows[s.rows.length-1].t))-TR*H;
+  const keep=task.start;
+  for(let t=Math.ceil(t0/H)*H; t<=t1; t+=H){ task.start=t; if(evalTask(task).ok) return t; }
   task.start=keep; return null;
 }
 
@@ -685,8 +782,9 @@ function parseDTN(P){
     const r = {t: day + (+tk[0])*H, wdir:COMPASS[tk[1]], ws:n(2)!=null?n(2)*kt:null, gust:n(4)!=null?n(4)*kt:null,
       comps:[{n:'mer du vent',h:n(7),dir:dirVal(tk[8]),t:n(9)},{n:'houle',h:n(10),dir:dirVal(tk[11]),t:n(12)}],
       hs:n(13), tp:n(14), cur:n(15)!=null?n(15)*kt:null};
-    const dom = r.comps.filter(c=>c.h!=null).sort((a,b)=>b.h-a.h)[0];
-    r.dir = dom ? dom.dir : null; r.dirNote='dominante';
+    // direction de la mer totale = moyenne vectorielle pondérée par l'énergie (Hs²) mer du vent + houle
+    const cs = r.comps.filter(c=>c.h!=null && c.dir!=null);
+    r.dir = cs.length ? circMean(cs.map(c=>c.dir), cs.map(c=>c.h*c.h)) : null;
     if(r.hs!=null) rows.push(r);
   }
   // day header may precede rows past midnight on the same page - handled. Ensure monotonic.
@@ -773,55 +871,91 @@ async function fetchWindy(){
   try{
     const call = body => fetch('https://api.windy.com/api/point-forecast/v2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.assign({lat,lon,levels:['surface'],key},body))}).then(async r=>{ const j=await r.json(); if(!r.ok) throw new Error(j.message||r.status); return j; });
     const [wv, wd] = await Promise.all([ call({model:'gfsWave',parameters:['waves','windWaves','swell1']}), call({model:'gfs',parameters:['wind','windGust']}).catch(()=>null) ]);
+    const isTest = !!(wv.warning || /trial|testing|shuffled/i.test(JSON.stringify(wv).slice(0,400)));
     const wi = new Map((wd?.ts||[]).map((t,i)=>[t,i]));
     const rows = wv.ts.map((t,i)=>{ const j=wi.get(t); let ws=null, wdir=null;
       if(j!=null){ const u=wd['wind_u-surface'][j], v=wd['wind_v-surface'][j]; ws=Math.hypot(u,v); wdir=norm360(Math.atan2(-u,-v)*180/Math.PI); }
       return {t, hs:wv['waves_height-surface'][i], tp:wv['waves_period-surface'][i], dir:wv['waves_direction-surface'][i], ws, wdir, gust:j!=null?wd['gust-surface']?.[j]:null,
         comps:[{n:'mer du vent',h:wv['windWaves_height-surface']?.[i],dir:wv['windWaves_direction-surface']?.[i]},{n:'houle',h:wv['swell1_height-surface']?.[i],dir:wv['swell1_direction-surface']?.[i]}]};
     }).filter(r=>r.hs!=null);
-    addSource({provider:'Windy', location:`${lat}, ${lon} (GFS Wave)`, lat, lon, issued:Math.floor(Date.now()/H)*H, issuedTxt:'Windy Point Forecast GFS Wave (récupéré le '+fmtFull(Date.now())+') – Tp = période moyenne des vagues', tzNote:'UTC', rows});
-    toast(`Windy : ${rows.length} pas de temps récupérés`);
+    addSource({provider:'Windy', test:isTest, use:!isTest, location:`${lat}, ${lon} (GFS Wave)`, lat, lon, issued:Math.floor(Date.now()/H)*H, issuedTxt:'Windy Point Forecast GFS Wave (récupéré le '+fmtFull(Date.now())+') – Tp = période moyenne des vagues', tzNote:'UTC', rows});
+    toast(isTest ? 'Windy : clé de TEST détectée – données aléatoires exclues de la vérification' : `Windy : ${rows.length} pas de temps récupérés`, isTest?8000:3500);
   }catch(e){ toast('Windy indisponible : '+e.message+' (clé, quota ou réseau)', 7000); }
 }
 
+
 /* ======================================================================
-   CHART (SVG)
+   GRAPHICS
    ====================================================================== */
 function chartSVG(ev, opts={}){
-  const W=opts.w||900, Hh=opts.h||300, m={l:46,r:16,t:14,b:38};
-  const per = ev.per; if(!per.length) return '<p class="muted">Aucune source météo active.</p>';
-  const a=ev.task.start, b=a+ev.TR*H;
-  let x0=Math.min(...per.map(r=>r.all[0]?.t??a)), x1=Math.max(...per.map(r=>r.all[r.all.length-1]?.t??b));
-  x0=Math.min(x0,a-6*H); x1=Math.max(Math.min(x1, b+24*H), b+6*H);
-  const pts = per.flatMap(r=>r.all.filter(p=>p.t>=x0&&p.t<=x1));
-  let ymax = Math.max(1, ...pts.map(p=>Math.max(p.hs??0, isFinite(p.allow)?p.allow:0))); ymax = Math.ceil(ymax*1.15*2)/2;
+  const W=opts.w||900, Hh=opts.h||290, m={l:46,r:16,t:16,b:38};
+  const per=ev.per; if(!per.length) return '<p class="muted">Aucune source météo active.</p>';
+  const a=ev.task.start, p1=a+ev.TP*H, b=a+ev.TR*H, b6=b+6*H;
+  const x0=a-6*H, x1=b6+6*H;
+  const pts=per.flatMap(r=>r.src.rows.filter(p=>p.t>=x0&&p.t<=x1));
+  let ymax=Math.max(1,...pts.map(p=>p.hs??0),...per.flatMap(r=>r.flat.map(f=>isFinite(f.st.opwf)?f.st.opwf:0)));
+  ymax=Math.ceil(ymax*1.18*2)/2;
   const X=t=>m.l+(t-x0)/(x1-x0)*(W-m.l-m.r), Y=v=>Hh-m.b-(v/ymax)*(Hh-m.t-m.b);
-  let s=`<svg viewBox="0 0 ${W} ${Hh}" role="img" aria-label="Hs prévu et Hs admissible – ${esc(ev.task.name)}" font-family="Arial,sans-serif" font-size="11">`;
-  s+=`<rect x="${X(a)}" y="${m.t}" width="${Math.max(1,X(b)-X(a))}" height="${Hh-m.t-m.b}" fill="#2f3872" opacity=".07"/>`;
-  s+=`<text x="${X(a)+4}" y="${m.t+12}" fill="#2f3872" font-weight="700">Fenêtre T<tspan baseline-shift="sub" font-size="8">R</tspan> = ${r0(ev.TR)} h</text>`;
+  const id='h'+uid();
+  let s=`<svg viewBox="0 0 ${W} ${Hh}" role="img" aria-label="Hs prévu et Hs admissible – ${esc(taskName(ev.task))}" font-family="Arial,sans-serif" font-size="11">
+  <defs><pattern id="${id}" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#b9bcc6" stroke-width="2"/></pattern></defs>`;
+  s+=`<rect x="${X(a)}" y="${m.t}" width="${X(p1)-X(a)}" height="${Hh-m.t-m.b}" fill="#2f3872" opacity=".13"/>`;
+  s+=`<rect x="${X(p1)}" y="${m.t}" width="${Math.max(0,X(b)-X(p1))}" height="${Hh-m.t-m.b}" fill="#f0a020" opacity=".16"/>`;
+  s+=`<rect x="${X(b)}" y="${m.t}" width="${X(b6)-X(b)}" height="${Hh-m.t-m.b}" fill="url(#${id})" opacity=".5"/>`;
+  s+=`<text x="${(X(a)+X(p1))/2}" y="${m.t+12}" text-anchor="middle" fill="#2f3872" font-weight="700">T pop ${r0(ev.TP)} h</text>`;
+  if(ev.TR>ev.TP) s+=`<text x="${(X(p1)+X(b))/2}" y="${m.t+12}" text-anchor="middle" fill="#8a5a00" font-weight="700">cont.</text>`;
+  s+=`<text x="${(X(b)+X(b6))/2}" y="${m.t+12}" text-anchor="middle" fill="#666">+6 h</text>`;
   for(let v=0; v<=ymax+1e-9; v+= ymax>6?1:0.5){ s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="#e3e5ea"/><text x="${m.l-6}" y="${Y(v)+4}" text-anchor="end" fill="#555">${v.toFixed(1)}</text>`; }
   s+=`<text x="12" y="${m.t+(Hh-m.t-m.b)/2}" transform="rotate(-90 12 ${m.t+(Hh-m.t-m.b)/2})" text-anchor="middle" fill="#555">Hs (m)</text>`;
-  const step = (x1-x0)/H > 120 ? 24 : 12;
+  const span=(x1-x0)/H, step = span>150?24:span>60?12:span>24?6:3;
   for(let t=Math.ceil(x0/(step*H))*step*H; t<=x1; t+=step*H){ const p=parts(t); s+=`<line x1="${X(t)}" x2="${X(t)}" y1="${m.t}" y2="${Hh-m.b}" stroke="#eef0f3"/><text x="${X(t)}" y="${Hh-m.b+14}" text-anchor="middle" fill="#555">${p.day}/${p.month}</text><text x="${X(t)}" y="${Hh-m.b+26}" text-anchor="middle" fill="#888">${p.hour}h</text>`; }
   per.forEach(r=>{
-    const c=r.src.color; const ps=r.all.filter(p=>p.t>=x0&&p.t<=x1);
-    const path = ps.map((p,i)=>`${i?'L':'M'}${X(p.t).toFixed(1)},${Y(p.hs??0).toFixed(1)}`).join('');
-    const ap = ps.map((p,i)=>`${i?'H'+X(p.t).toFixed(1)+'V':'M'+X(p.t).toFixed(1)+','}${Y(Math.min(p.allow,ymax)).toFixed(1)}`).join('');
-    s+=`<path d="${ap}" fill="none" stroke="${c}" stroke-width="2" stroke-dasharray="6 4"/>`;
-    s+=`<path d="${path}" fill="none" stroke="${c}" stroke-width="2.2"/>`;
-    ps.forEach(p=>{ const inw=p.t>=a&&p.t<=b; if(!p.ok && inw) s+=`<circle cx="${X(p.t)}" cy="${Y(p.hs)}" r="4.5" fill="#b3261e" stroke="#fff" stroke-width="1.5"><title>${fmt(p.t)} Hs ${r2(p.hs)} > ${r2(p.allow)} m</title></circle>`;
-      else s+=`<circle cx="${X(p.t)}" cy="${Y(p.hs)}" r="7" fill="transparent"><title>${esc(r.src.provider)} ${fmt(p.t)} – Hs ${r2(p.hs)} m · Tp ${r1(p.tp)} s · Hs adm. ${r2(p.allow)} m (OPlim ${r2(p.oplim)} × α ${r2(p.alpha)})</title></circle>`; });
+    const c=r.src.color; const ps=r.src.rows.filter(p=>p.t>=x0&&p.t<=x1);
+    r.flat.forEach(({st})=>{ s+=`<line x1="${X(Math.max(st.a,x0))}" x2="${X(Math.min(st.b,x1))}" y1="${Y(Math.min(st.opwf,ymax))}" y2="${Y(Math.min(st.opwf,ymax))}" stroke="${c}" stroke-width="2.2" stroke-dasharray="7 4"><title>OPwf = ${r2(st.oplim)} × ${r2(st.alpha)} = ${r2(st.opwf)} m</title></line>`; });
+    s+=`<path d="${ps.map((p,i)=>`${i?'L':'M'}${X(p.t).toFixed(1)},${Y(p.hs??0).toFixed(1)}`).join('')}" fill="none" stroke="${c}" stroke-width="2.2"/>`;
+    ps.forEach(p=>{ const f=r.flat.find(x=>p.t>=x.st.a-1e-6&&p.t<=x.st.b+1e-6);
+      if(f && p.hs>f.st.opwf+1e-9) s+=`<circle cx="${X(p.t)}" cy="${Y(p.hs)}" r="4.5" fill="#b3261e" stroke="#fff" stroke-width="1.5"><title>${fmt(p.t)} Hs ${r2(p.hs)} > ${r2(f.st.opwf)} m</title></circle>`;
+      else s+=`<circle cx="${X(p.t)}" cy="${Y(p.hs)}" r="6" fill="transparent"><title>${esc(r.src.provider)} ${fmt(p.t)} – Hs ${r2(p.hs)} m · Tp ${r1(p.tp)} s · Dir ${d3(p.dir)}</title></circle>`; });
   });
-  s+=`<line x1="${X(a)}" x2="${X(a)}" y1="${m.t}" y2="${Hh-m.b}" stroke="#2f3872" stroke-width="1.5"/><line x1="${X(b)}" x2="${X(b)}" y1="${m.t}" y2="${Hh-m.b}" stroke="#2f3872" stroke-width="1.5"/>`;
   s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Hh-m.b}" y2="${Hh-m.b}" stroke="#888"/></svg>`;
-  const leg = `<div class="legend">${per.map(r=>`<span><i style="border-color:${r.src.color}"></i>Hs prévu ${esc(r.src.provider)}</span><span><i class="dash" style="border-color:${r.src.color}"></i>Hs admissible (OP<sub>lim</sub>×α) ${esc(r.src.provider)}</span>`).join('')}<span><svg width="12" height="12"><circle cx="6" cy="6" r="5" fill="#b3261e"/></svg> dépassement dans la fenêtre</span></div>`;
+  const leg=`<div class="legend">${per.map(r=>`<span><i style="border-color:${r.src.color}"></i>Hs prévu ${esc(r.src.provider)}</span><span><i class="dash" style="border-color:${r.src.color}"></i>OP<sub>wf</sub> = OP<sub>lim</sub>×α (${esc(r.src.provider)})</span>`).join('')}
+    <span><b class="box" style="background:rgba(47,56,114,.25)"></b>T<sub>pop</sub></span><span><b class="box" style="background:rgba(240,160,32,.3)"></b>contingence (→ T<sub>R</sub>)</span><span><b class="box" style="background:repeating-linear-gradient(45deg,#ccc 0 2px,#fff 2px 5px)"></b>T<sub>R</sub> + 6 h</span><span><svg width="12" height="12"><circle cx="6" cy="6" r="5" fill="#b3261e"/></svg> dépassement</span></div>`;
   return `<div class="chart">${s}</div>${leg}`;
+}
+/* rose des caps : couronne = cap du navire (vrai), flèches = vagues (provenance) */
+function roseSVG(ev, size=320){
+  const c=size/2, R1=c-34, R0=R1-22; const rose=ev.rose;
+  const P=(ang,r)=>{ const a=(ang-90)*Math.PI/180; return [c+r*Math.cos(a), c+r*Math.sin(a)]; };
+  let s=`<svg viewBox="0 0 ${size} ${size}" width="100%" role="img" aria-label="Rose des caps autorisés – ${esc(taskName(ev.task))}" font-family="Arial,sans-serif" font-size="11">`;
+  rose.forEach(r=>{ const a0=r.h-2.5, a1=r.h+2.5; const [x0,y0]=P(a0,R1),[x1,y1]=P(a1,R1),[x2,y2]=P(a1,R0),[x3,y3]=P(a0,R0);
+    s+=`<path d="M${x0},${y0}A${R1},${R1} 0 0 1 ${x1},${y1}L${x2},${y2}A${R0},${R0} 0 0 0 ${x3},${y3}Z" fill="${STATUS[r.cls]||'#ccc'}" stroke="#fff" stroke-width=".6"><title>Cap ${d3(r.h)} : utilisation ${r0(100*r.u)} %</title></path>`; });
+  s+=`<circle cx="${c}" cy="${c}" r="${R0-2}" fill="#fff" stroke="#d6d8df"/>`;
+  for(let a=0;a<360;a+=30){ const [x,y]=P(a,R1+13); const L={0:'N',90:'E',180:'S',270:'W'}[a]; s+=`<text x="${x}" y="${y+4}" text-anchor="middle" fill="${L?'#111':'#666'}" font-weight="${L?700:400}">${L||a+'°'}</text>`; }
+  // vagues
+  const st = ev.gov ? ev.gov.flat.map(f=>f.st) : [];
+  const uniq=[]; st.forEach(x=>{ if(x.dirMean!=null && !uniq.some(u=>circDiff(u.dirMean,x.dirMean)<8 && Math.abs((u.tpMean??0)-(x.tpMean??0))<1)) uniq.push(x); });
+  uniq.slice(0,4).forEach((x,i)=>{ const [xa,ya]=P(x.dirMean,R0-6), [xb,yb]=P(x.dirMean,R0-50); const ang=Math.atan2(yb-ya,xb-xa);
+    const hx=xb, hy=yb, l=9; s+=`<line x1="${xa}" y1="${ya}" x2="${xb}" y2="${yb}" stroke="#1f6feb" stroke-width="5"/><path d="M${hx+Math.cos(ang)*l},${hy+Math.sin(ang)*l} L${hx+Math.cos(ang+2.4)*l},${hy+Math.sin(ang+2.4)*l} L${hx+Math.cos(ang-2.4)*l},${hy+Math.sin(ang-2.4)*l}Z" fill="#1f6feb"/>`;
+    const [tx,ty]=P(x.dirMean,R0-62); s+=`<text x="${tx}" y="${ty+4}" text-anchor="middle" fill="#1f4fa8" font-weight="700" font-size="10">${uniq.length>1?'M'+(i+1):''}</text>`; });
+  // navire au cap cible
+  const h=norm360(+ev.task.heading||0); const sc=1;
+  s+=`<g transform="translate(${c},${c}) rotate(${h})"><path d="M0,-34 L11,-16 L11,26 L-11,26 L-11,-16 Z" fill="#2f3872" opacity=".88"/><line x1="0" y1="-34" x2="0" y2="${-(R0-4)}" stroke="#2f3872" stroke-width="1.5" stroke-dasharray="3 3"/></g>`;
+  s+=`<text x="${c}" y="${size-4}" text-anchor="middle" fill="#111" font-weight="700">Cap cible ${d3(h)}</text></svg>`;
+  return s;
+}
+function roseConvSVG(){
+  const size=260,c=130,R=104; const P=(ang,r)=>{ const a=(ang)*Math.PI/180; return [c+r*Math.cos(a), c+r*Math.sin(a)]; }; // 0° à droite (étrave), sens horaire
+  let s=`<svg viewBox="0 0 ${size} ${size}" width="100%" role="img" aria-label="Rosace du heading relatif" font-family="Arial,sans-serif" font-size="11"><circle cx="${c}" cy="${c}" r="${R}" fill="none" stroke="#333"/><circle cx="${c}" cy="${c}" r="${R*0.62}" fill="none" stroke="#999"/>`;
+  for(let a=0;a<360;a+=30){ const [x0,y0]=P(a,R-2),[x1,y1]=P(a,R*0.66),[tx,ty]=P(a,R+14); const an=Math.atan2(y1-y0,x1-x0);
+    s+=`<line x1="${c}" y1="${c}" x2="${P(a,R*0.62)[0]}" y2="${P(a,R*0.62)[1]}" stroke="#bbb" stroke-width=".7"/><line x1="${x0}" y1="${y0}" x2="${x1}" y2="${y1}" stroke="#3b6fb6" stroke-width="5"/><path d="M${x1+Math.cos(an)*7},${y1+Math.sin(an)*7} L${x1+Math.cos(an+2.4)*8},${y1+Math.sin(an+2.4)*8} L${x1+Math.cos(an-2.4)*8},${y1+Math.sin(an-2.4)*8}Z" fill="#3b6fb6"/><text x="${tx}" y="${ty+4}" text-anchor="middle" fill="#444">${a}°</text>`; }
+  s+=`<path d="M${c-38},${c-12} L${c+20},${c-12} L${c+36},${c} L${c+20},${c+12} L${c-38},${c+12} Z" fill="#8f9bd0" opacity=".9"/><text x="${c-8}" y="${c+4}" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">avant →</text></svg>`;
+  return s;
 }
 
 /* ======================================================================
-   UI RENDERING
+   UI
    ====================================================================== */
-function field(label, key, obj, type='text', extra=''){ return `<label class="f">${label}<input type="${type}" data-k="${key}" value="${esc(obj[key])}" ${extra}></label>`; }
+function field(label, key, obj, type='text', extra=''){ return `<label class="f">${label}<input type="${type}" data-k="${key}" value="${esc(obj[key]??'')}" ${extra}></label>`; }
 function bindFields(root, obj, after){
   $$('[data-k]', root).forEach(el=>{
     el.addEventListener(el.tagName==='SELECT'||el.type==='checkbox'?'change':'input', ()=>{
@@ -829,166 +963,189 @@ function bindFields(root, obj, after){
     });
   });
 }
+/* ---- 1 projet ---- */
 function renderProject(){
   const p=S.project;
-  $('#projFields').innerHTML = field('Projet','project',p)+field('Localisation','location',p)+field('Navire','vessel',p)+field('Employeur','employer',p)+field('Date du rapport','date',p,'text','placeholder="jj/mm/aa"')+field('Heure','time',p,'text','placeholder="12:00"')+field('Préparé par','preparedBy',p)+field('Longueur de câble [m]','cableLength',p)+field('Vitesse de pose [m/h]','laySpeed',p);
-  $('#projFields2').innerHTML = field('Titre du rapport','title',p)+field('Avertissement (en-tête)','disclaimer',p)+field('Pied de page','footer',p)+field('Révision','rev',p)
-    + p.sigs.map((s,i)=>`<label class="f">Signature ${i+1} – fonction / nom<div class="row"><input type="text" data-sig="${i}" data-sk="role" value="${esc(s.role)}" style="max-width:120px"><input type="text" data-sig="${i}" data-sk="name" value="${esc(s.name)}" placeholder="Nom"></div></label>`).join('');
+  $('#projFields').innerHTML = field('Projet','project',p)+field('Localisation','location',p)+field('Navire','vessel',p)+field('Employeur','employer',p)+field('Date du rapport','date',p,'text','placeholder="jj/mm/aa"')+field('Heure','time',p,'text','placeholder="12:00"')+field('Préparé par','preparedBy',p);
+  $('#projFields2').innerHTML = field('Titre du rapport','title',p)+field('Pied de page','footer',p)+field('Révision','rev',p);
   bindFields($('#projFields'), p); bindFields($('#projFields2'), p);
+  $('#sigList').innerHTML = p.sigs.map((s,i)=>`<div class="row" style="margin:4px 0"><input type="text" data-sig="${i}" data-sk="role" value="${esc(s.role)}" aria-label="Fonction du signataire ${i+1}" style="max-width:300px"><input type="text" data-sig="${i}" data-sk="name" value="${esc(s.name)}" placeholder="Nom" aria-label="Nom du signataire ${i+1}" style="max-width:300px"><button class="b s d" data-sigdel="${i}" aria-label="Retirer">✕</button></div>`).join('');
   $$('[data-sig]').forEach(el=>el.addEventListener('input',()=>{ p.sigs[+el.dataset.sig][el.dataset.sk]=el.value; save(); }));
+  $$('[data-sigdel]').forEach(el=>el.onclick=()=>{ p.sigs.splice(+el.dataset.sigdel,1); save(); renderProject(); });
   $('#logoPrev').src = p.logo || LOGO_DEFAULT;
 }
-/* ----- analysis tables ----- */
-let curTbl = null;
+/* ---- 2 analyses : grille type Excel ---- */
+let curTbl=null; const G={a:null,f:null};
+function gGet(t,r,c){ if(r===0&&c===0) return 'Dir \\ Tp'; if(r===0) return t.tps[c-1]??''; if(c===0) return t.dirs[r-1]??''; return t.cells[r-1]?.[c-1]??''; }
+function gSet(t,r,c,v){ v=String(v??'').trim().replace(/^(-?\d+),(\d+)(\*?)$/,'$1.$2$3'); if(r===0&&c===0) return; if(r===0) t.tps[c-1]=v; else if(c===0) t.dirs[r-1]=v; else { (t.cells[r-1] ||= [])[c-1]=v; } }
+function gEnsure(t,R,C){ while(t.dirs.length<R-1){ t.dirs.push(''); t.cells.push([]); } while(t.tps.length<C-1) t.tps.push(''); t.cells.forEach(r=>{ while(r.length<t.tps.length) r.push(''); }); }
+function gRect(){ if(!G.a) return null; const f=G.f||G.a; return {r0:Math.min(G.a.r,f.r),r1:Math.max(G.a.r,f.r),c0:Math.min(G.a.c,f.c),c1:Math.max(G.a.c,f.c)}; }
+function gPaint(){ const R=gRect(); $$('.xg td[data-r]').forEach(td=>{ const r=+td.dataset.r,c=+td.dataset.c; td.classList.toggle('sel', !!R && r>=R.r0&&r<=R.r1&&c>=R.c0&&c<=R.c1 && (R.r1>R.r0||R.c1>R.c0)); td.classList.toggle('act', !!G.f && G.f.r===r&&G.f.c===c); }); }
+function gFocus(r,c){ const i=$(`.xg td[data-r="${r}"][data-c="${c}"] input`); if(i){ i.focus(); i.select(); } }
 function renderTables(){
   const sel=$('#tblSel'); if(!S.tables.find(t=>t.id===curTbl)) curTbl=S.tables[0]?.id;
-  sel.innerHTML = S.tables.map(t=>`<option value="${t.id}" ${t.id===curTbl?'selected':''}>${esc(t.name)}</option>`).join('');
-  const t = S.tables.find(x=>x.id===curTbl); const ed=$('#tblEditor');
-  if(!t){ ed.innerHTML='<p>Aucun tableau. Créez-en un.</p>'; return; }
-  const used = S.tasks.filter(k=>k.tableId===t.id).map(k=>k.name);
-  const vals = t.cells.flat().map(c=>cellVal(c).v).filter(v=>v!=null); const vmax=Math.max(1,...vals);
-  ed.innerHTML = `
+  sel.innerHTML=S.tables.map(t=>`<option value="${t.id}" ${t.id===curTbl?'selected':''}>${esc(t.name)}</option>`).join('');
+  $('#roseConv').innerHTML=roseConvSVG();
+  const t=S.tables.find(x=>x.id===curTbl), ed=$('#tblEditor');
+  if(!t){ ed.innerHTML='<p>Aucune analyse. Créez-en une.</p>'; return; }
+  const used=S.tasks.filter(k=>k.tableId===t.id).map(taskName);
+  ed.innerHTML=`
     <div class="grid g3">
       <label class="f">Nom de l'analyse<input type="text" data-k="name" value="${esc(t.name)}"></label>
-      <label class="f">Convention de direction relative<select data-k="conv">
-        <option value="head0" ${t.conv==='head0'?'selected':''}>0° = vagues venant de l'avant (étrave), 90° = tribord</option>
-        <option value="stern0" ${t.conv==='stern0'?'selected':''}>0° = vagues venant de l'arrière, 180° = de l'avant</option></select></label>
-      <label class="f">Entre deux lignes / colonnes<select data-k="interp">
-        <option value="cons" ${t.interp!=='lin'?'selected':''}>Conservatif : valeur la plus faible</option>
-        <option value="lin" ${t.interp==='lin'?'selected':''}>Interpolation linéaire</option></select></label>
-      <label class="f">Signification du « * »<input type="text" data-k="starNote" value="${esc(t.starNote||'')}"></label>
+      <label class="f">Entre deux lignes / colonnes<select data-k="interp"><option value="cons" ${t.interp!=='lin'?'selected':''}>Conservatif : valeur la plus faible</option><option value="lin" ${t.interp==='lin'?'selected':''}>Interpolation linéaire</option></select></label>
+      <label class="f" style="justify-content:flex-end"><span><input type="checkbox" data-k="sym" ${t.sym?'checked':''}> Analyse symétrique (0–180°, bâbord = tribord)</span></label>
     </div>
-    <p class="help">Direction relative = direction d'où viennent les vagues − cap du navire (sens horaire). Utilisé par : ${used.length?used.map(esc).join(', '):'<em>aucune tâche</em>'}.</p>
-    <div class="scroll"><table class="ag" aria-label="Hs limite par direction relative et Tp">
-      <thead><tr><th class="corner">Dir \\ Tp (s)</th>${t.tps.map((v,j)=>`<th><input aria-label="Tp colonne ${j+1}" data-tp="${j}" value="${esc(v)}"></th>`).join('')}<th></th></tr></thead>
-      <tbody>${t.dirs.map((d,i)=>`<tr><th><input aria-label="Direction ligne ${i+1}" data-dir="${i}" value="${esc(d)}"></th>${t.tps.map((_,j)=>{ const cv=cellVal(t.cells[i]?.[j]); const bg = cv.v==null?'#fde7e5':`rgba(42,120,214,${(0.05+0.45*cv.v/vmax).toFixed(2)})`;
-        return `<td style="background:${bg}"><input aria-label="Hs limite dir ${esc(d)}° Tp ${esc(t.tps[j])} s" data-c="${i},${j}" value="${esc(t.cells[i]?.[j]??'')}"></td>`; }).join('')}
-        <td><button class="b s d" data-delrow="${i}" aria-label="Supprimer la ligne ${esc(d)}°">✕</button></td></tr>`).join('')}
-        <tr><td></td>${t.tps.map((_,j)=>`<td style="text-align:center"><button class="b s d" data-delcol="${j}" aria-label="Supprimer la colonne">✕</button></td>`).join('')}<td></td></tr></tbody></table></div>
-    <div class="row" style="margin-top:10px"><button class="b" id="addRow">+ Ligne direction</button><button class="b" id="addCol">+ Colonne Tp</button></div>`;
+    <p class="muted" style="font-size:13px;margin:6px 0">Utilisée par : ${used.length?used.map(esc).join(', '):'aucune tâche'}</p>
+    <div class="scroll" style="max-height:none"><table class="xg" id="xg" aria-label="Hs limite par heading relatif (lignes) et Tp (colonnes)"></table></div>
+    <div class="row" style="margin-top:10px"><button class="b s" id="gAddR">+ Ligne</button><button class="b s" id="gAddC">+ Colonne</button><button class="b s d" id="gDelR">Supprimer ligne(s) sélectionnée(s)</button><button class="b s d" id="gDelC">Supprimer colonne(s) sélectionnée(s)</button></div>`;
   bindFields(ed, t, k=>{ if(k==='name') $('#tblSel').selectedOptions[0].textContent=t.name; });
-  $$('[data-tp]',ed).forEach(el=>el.addEventListener('change',()=>{t.tps[+el.dataset.tp]=el.value.trim(); save();}));
-  $$('[data-dir]',ed).forEach(el=>el.addEventListener('change',()=>{t.dirs[+el.dataset.dir]=el.value.trim(); save();}));
-  $$('[data-c]',ed).forEach(el=>el.addEventListener('change',()=>{const [i,j]=el.dataset.c.split(',').map(Number); (t.cells[i] ||= [])[j]=el.value.trim(); save(); renderTables();}));
-  $$('[data-delrow]',ed).forEach(el=>el.addEventListener('click',()=>{const i=+el.dataset.delrow; t.dirs.splice(i,1); t.cells.splice(i,1); save(); renderTables();}));
-  $$('[data-delcol]',ed).forEach(el=>el.addEventListener('click',()=>{const j=+el.dataset.delcol; t.tps.splice(j,1); t.cells.forEach(r=>r.splice(j,1)); save(); renderTables();}));
-  $('#addRow').onclick=()=>{ const last=num(t.dirs[t.dirs.length-1])??-30; t.dirs.push(String(last+30)); t.cells.push(t.tps.map(()=>'')); save(); renderTables(); };
-  $('#addCol').onclick=()=>{ const last=num(t.tps[t.tps.length-1])??3; t.tps.push(String(last+1)); t.cells.forEach(r=>r.push('')); save(); renderTables(); };
+  drawGrid(t);
+  $('#gAddR').onclick=()=>{ const last=num(t.dirs.at(-1)); t.dirs.push(last!=null?String(last+30):''); t.cells.push(t.tps.map(()=>'')); save(); drawGrid(t); };
+  $('#gAddC').onclick=()=>{ const last=num(t.tps.at(-1)); t.tps.push(last!=null?String(last+1):''); t.cells.forEach(r=>r.push('')); save(); drawGrid(t); };
+  $('#gDelR').onclick=()=>{ const R=gRect(); if(!R) return toast('Sélectionnez des cases dans les lignes à supprimer'); const r0=Math.max(1,R.r0); const n=R.r1-r0+1; if(n<=0) return; t.dirs.splice(r0-1,n); t.cells.splice(r0-1,n); G.a=G.f=null; save(); drawGrid(t); };
+  $('#gDelC').onclick=()=>{ const R=gRect(); if(!R) return toast('Sélectionnez des cases dans les colonnes à supprimer'); const c0=Math.max(1,R.c0); const n=R.c1-c0+1; if(n<=0) return; t.tps.splice(c0-1,n); t.cells.forEach(r=>r.splice(c0-1,n)); G.a=G.f=null; save(); drawGrid(t); };
 }
-function newTable(){ const t={id:uid(),name:'Nouvelle analyse',conv:'head0',interp:'cons',starNote:'',tps:['4','5','6','7','8','9','10'],dirs:['0','30','60','90','120','150','180','210','240','270','300','330'],cells:[]}; t.cells=t.dirs.map(()=>t.tps.map(()=>'')); S.tables.push(t); curTbl=t.id; save(); renderTables(); }
-function pasteTableDialog(){
-  openDlg('Coller un tableau depuis Excel', `
-    <p class="help">Copiez dans Excel le bloc complet <strong>avec la ligne d'en-tête des Tp et la colonne des directions</strong> (comme « Wdir/Tp | 4 | 5 | … »), puis collez-le ici. Les « * » sont conservés.</p>
-    <textarea id="pasteArea" aria-label="Tableau à coller" placeholder="Wdir/Tp	4	5	6&#10;0	1.00*	1.50*	2.00*&#10;30	1.00*	1.50*	2.00*"></textarea>
-    <div class="row" style="margin-top:8px"><label><input type="radio" name="pm" value="new" checked> Nouveau tableau</label><label><input type="radio" name="pm" value="rep"> Remplacer le tableau affiché</label></div>
-    <div class="row end" style="margin-top:12px"><button class="b" data-close>Annuler</button><button class="b p" id="pasteGo">Importer</button></div>`);
-  $('#pasteGo').onclick=()=>{
-    const lines=$('#pasteArea').value.split(/\r?\n/).filter(l=>l.trim()); if(lines.length<2) return toast('Tableau trop court');
-    const sp = l => l.includes('\t')? l.split('\t') : l.trim().split(/[;\s]+/);
-    const hdr = sp(lines[0]).map(s=>s.trim()); const tps = hdr.slice(1).filter(x=>x!=='');
-    const dirs=[], cells=[];
-    for(const l of lines.slice(1)){ const c=sp(l).map(s=>s.trim().replace(',', '.')); if(num(c[0])==null) continue; dirs.push(c[0]); cells.push(tps.map((_,j)=>c[j+1]??'')); }
-    if(!dirs.length) return toast('Aucune ligne de direction reconnue');
-    const mode = $('input[name=pm]:checked').value;
-    if(mode==='rep' && S.tables.find(t=>t.id===curTbl)){ Object.assign(S.tables.find(t=>t.id===curTbl),{tps,dirs,cells}); }
-    else { const t={id:uid(),name:'Analyse collée '+(S.tables.length+1),conv:'head0',interp:'cons',starNote:'',tps,dirs,cells}; S.tables.push(t); curTbl=t.id; }
-    save(); closeDlg(); renderTables(); toast(`Tableau importé : ${dirs.length} directions × ${tps.length} Tp`);
-  };
+function drawGrid(t, focus){
+  const vals=t.cells.flat().map(c=>cellVal(c).v).filter(v=>v!=null); const vmax=Math.max(1,...vals);
+  const R=t.dirs.length+1, C=t.tps.length+1; let h='';
+  for(let r=0;r<R;r++){ h+='<tr>'; for(let c=0;c<C;c++){
+    const v=gGet(t,r,c);
+    if(r===0&&c===0){ h+=`<td class="corner" data-r="0" data-c="0">Heading rel. ↓ \\ Tp (s) →</td>`; continue; }
+    const head=r===0||c===0; const cv=head?null:cellVal(v);
+    const style = head?'' : cv.v==null?'' : `background:rgba(42,120,214,${(0.06+0.42*cv.v/vmax).toFixed(2)})`;
+    h+=`<td data-r="${r}" data-c="${c}" class="${head?'h':''} ${!head&&cv.v==null?'empty':''}" style="${style}"><input value="${esc(v)}" aria-label="${r===0?'Tp colonne '+c:c===0?'Heading ligne '+r:'Hs limite '+esc(t.dirs[r-1])+'° / Tp '+esc(t.tps[c-1])+' s'}"></td>`; }
+    h+='</tr>'; }
+  const g=$('#xg'); g.innerHTML=h; gPaint();
+  if(focus) gFocus(focus.r, focus.c);
+  // events
+  let dragging=false;
+  $$('td[data-r]',g).forEach(td=>{
+    const r=+td.dataset.r, c=+td.dataset.c, inp=td.querySelector('input');
+    td.addEventListener('mousedown',e=>{ if(e.shiftKey && G.a){ G.f={r,c}; e.preventDefault(); } else { G.a={r,c}; G.f={r,c}; } dragging=true; gPaint(); });
+    td.addEventListener('mouseenter',()=>{ if(dragging){ G.f={r,c}; gPaint(); } });
+    if(!inp) return;
+    inp.addEventListener('focus',()=>{ if(!G.f || G.f.r!==r || G.f.c!==c){ G.a={r,c}; G.f={r,c}; gPaint(); } });
+    inp.addEventListener('input',()=>{ gSet(t,r,c,inp.value); save(); });
+    inp.addEventListener('change',()=>{ drawGrid(t); });
+    inp.addEventListener('keydown',e=>{
+      const mv=(dr,dc)=>{ e.preventDefault(); const nr=Math.max(0,Math.min(R-1,(G.f?.r??r)+dr)), nc=Math.max(0,Math.min(C-1,(G.f?.c??c)+dc));
+        if(e.shiftKey){ G.f={r:nr,c:nc}; gPaint(); } else { gSet(t,r,c,inp.value); G.a=G.f={r:nr,c:nc}; drawGrid(t,{r:nr,c:nc}); } };
+      const multi = (()=>{ const X=gRect(); return X && (X.r1>X.r0||X.c1>X.c0); })();
+      if(e.key==='ArrowDown'||e.key==='Enter') mv(1,0);
+      else if(e.key==='ArrowUp') mv(-1,0);
+      else if(e.key==='ArrowRight' && (e.shiftKey || inp.selectionEnd===inp.value.length)) mv(0,1);
+      else if(e.key==='ArrowLeft' && (e.shiftKey || inp.selectionStart===0)) mv(0,-1);
+      else if((e.key==='Delete'||e.key==='Backspace') && multi){ e.preventDefault(); const X=gRect(); for(let i=X.r0;i<=X.r1;i++) for(let j=X.c0;j<=X.c1;j++) gSet(t,i,j,''); save(); drawGrid(t,G.f); }
+      else if(e.key==='Escape'){ G.a=G.f={r,c}; gPaint(); }
+    });
+    inp.addEventListener('copy',e=>{ const X=gRect(); if(!X || (X.r1===X.r0&&X.c1===X.c0 && inp.selectionStart!==inp.selectionEnd)) return;
+      const rows=[]; for(let i=X.r0;i<=X.r1;i++){ const a=[]; for(let j=X.c0;j<=X.c1;j++) a.push(gGet(t,i,j)); rows.push(a.join('\t')); }
+      e.clipboardData.setData('text/plain', rows.join('\n')); e.preventDefault(); toast(`${(X.r1-X.r0+1)*(X.c1-X.c0+1)} case(s) copiée(s)`,1500); });
+    inp.addEventListener('cut',e=>{ const X=gRect(); if(!X || (X.r1===X.r0&&X.c1===X.c0)) return; inp.dispatchEvent(new ClipboardEvent('copy',{clipboardData:e.clipboardData})); });
+    inp.addEventListener('paste',e=>{
+      const txt=(e.clipboardData||window.clipboardData).getData('text/plain'); if(txt==null) return;
+      const lines=txt.replace(/\r/g,'').replace(/\n+$/,'').split('\n'); const block=lines.map(l=>l.split('\t'));
+      const X=gRect()||{r0:r,c0:c,r1:r,c1:c};
+      if(block.length===1 && block[0].length===1){
+        if(X.r1>X.r0||X.c1>X.c0){ e.preventDefault(); for(let i=X.r0;i<=X.r1;i++) for(let j=X.c0;j<=X.c1;j++) gSet(t,i,j,block[0][0]); save(); drawGrid(t,G.f); }
+        return; // collage simple dans la case : comportement normal
+      }
+      e.preventDefault();
+      const r0=X.r0, c0=X.c0;
+      gEnsure(t, r0+block.length, c0+Math.max(...block.map(b=>b.length)));
+      block.forEach((row,i)=>row.forEach((v,j)=>gSet(t,r0+i,c0+j,v)));
+      G.a={r:r0,c:c0}; G.f={r:r0+block.length-1,c:c0+Math.max(...block.map(b=>b.length))-1};
+      save(); drawGrid(t,{r:r0,c:c0}); G.f={r:r0+block.length-1,c:c0+Math.max(...block.map(b=>b.length))-1}; gPaint();
+      toast(`${block.length} ligne(s) × ${Math.max(...block.map(b=>b.length))} colonne(s) collées`);
+    });
+  });
+  document.addEventListener('mouseup',()=>{ dragging=false; },{once:true});
+  g.onmouseleave=()=>{};
+  window.addEventListener('mouseup',()=>dragging=false);
 }
-/* ----- alpha ----- */
+function newTable(){ const t={id:uid(),name:'Nouvelle analyse',interp:'cons',sym:false,tps:['4','5','6','7','8','9','10'],dirs:['0','30','60','90','120','150','180','210','240','270','300','330'],cells:[]}; t.cells=t.dirs.map(()=>t.tps.map(()=>'')); S.tables.push(t); curTbl=t.id; save(); renderTables(); }
+/* ---- 3 alpha ---- */
 function renderAlpha(){
   const A=S.alpha, ed=$('#alphaEditor');
-  ed.innerHTML = `
-    <div class="grid g2">
-      <label class="f">Nom / référence de la table<input type="text" id="aName" value="${esc(A.name)}"></label>
-      <label class="f">Ligne utilisée<select id="aMode">
-        <option value="lead" ${A.mode==='lead'?'selected':''}>Variable : selon le délai depuis l'émission du bulletin (lead time)</option>
-        <option value="tpop" ${A.mode==='tpop'?'selected':''}>Constante : selon T_R de la tâche (T_POP + contingence)</option></select></label>
-    </div>
-    <div class="help">Lecture : ligne = première durée ≥ délai (h) ; colonne = OP<sub>lim</sub> (Hs limite de l'analyse), interpolation linéaire. Au-delà de la dernière ligne, la dernière est utilisée et signalée.</div>
-    <div class="scroll"><table class="ag"><thead><tr><th class="corner">Durée ≤ (h) \\ OP<sub>lim</sub> Hs (m)</th>${A.cols.map((c,j)=>`<th><input aria-label="Colonne Hs ${j+1}" data-ac="${j}" value="${c}"></th>`).join('')}<th></th></tr></thead>
-    <tbody>${A.rows.map((r,i)=>`<tr><th><input aria-label="Durée ligne ${i+1}" data-ah="${i}" value="${r.h}"></th>${r.a.map((v,j)=>`<td><input aria-label="α ligne ${r.h} h colonne ${A.cols[j]} m" data-av="${i},${j}" value="${v}"></td>`).join('')}<td><button class="b s d" data-adel="${i}" aria-label="Supprimer la ligne">✕</button></td></tr>`).join('')}
-    <tr><td></td>${A.cols.map((_,j)=>`<td style="text-align:center"><button class="b s d" data-adelc="${j}" aria-label="Supprimer la colonne">✕</button></td>`).join('')}<td></td></tr></tbody></table></div>
-    <div class="row" style="margin-top:10px"><button class="b" id="aAddR">+ Ligne durée</button><button class="b" id="aAddC">+ Colonne Hs</button><button class="b" id="aDnv">Recharger DNV cas de base</button><button class="b" id="aPaste">📋 Coller depuis Excel</button></div>
-    <div class="warnbox">La table par défaut est le cas de base DNV (une seule prévision, Level C). Remplacez-la par la table α de votre procédure / MWS (Level A/B, météorologue à bord, monitoring…) si elle diffère. Un α manuel peut aussi être saisi par tâche.</div>
-    <h3 style="margin-top:16px">Calculateur rapide</h3>
-    <div class="grid g4"><label class="f">OP<sub>lim</sub> (m)<input type="number" step="0.01" id="qOp" value="3"></label><label class="f">Durée / lead time (h)<input type="number" id="qH" value="24"></label><div class="kpi"><div class="k">α</div><div class="v" id="qA">–</div></div><div class="kpi"><div class="k">Hs admissible = OP<sub>lim</sub> × α</div><div class="v" id="qR">–</div></div></div>`;
-  const qc=()=>{ const op=num($('#qOp').value)||0, h=num($('#qH').value)||0; const r=alphaLookup(op,h); $('#qA').textContent=r2(r.a)+(r.flags.length?' ⚠':''); $('#qR').textContent=`${r2(op)} × ${r2(r.a)} = ${r2(op*r.a)} m`; };
+  ed.innerHTML=`
+    <label class="f" style="max-width:600px">Référence de la table<input type="text" id="aName" value="${esc(A.name)}"></label>
+    <div class="scroll" style="margin-top:10px"><table class="t" style="width:auto"><thead><tr><th rowspan="2">Planned Operation<br>Period [h]</th><th colspan="${A.cols.length}">Operational limiting (OP<sub>lim</sub>) significant wave height [m]</th><th rowspan="2"></th></tr>
+      <tr>${A.cols.map((c,j)=>`<th>${j===A.cols.length-1?'Hs ≥ ':'Hs = '}<input aria-label="Colonne Hs ${j+1}" data-ac="${j}" value="${c}" style="width:60px;min-height:30px;padding:2px;text-align:center"></th>`).join('')}</tr></thead>
+    <tbody>${A.rows.map((r,i)=>`<tr><th>T<sub>pop</sub> ≤ <input aria-label="Durée ligne ${i+1}" data-ah="${i}" value="${r.h}" style="width:60px;min-height:30px;padding:2px;text-align:center"></th>${r.a.map((v,j)=>`<td><input aria-label="α ${r.h} h, Hs ${A.cols[j]} m" data-av="${i},${j}" value="${v}" style="width:70px;min-height:30px;padding:2px;text-align:center"></td>`).join('')}<td><button class="b s d" data-adel="${i}" aria-label="Supprimer la ligne">✕</button></td></tr>`).join('')}</tbody></table></div>
+    <p class="muted" style="font-size:13px">Entre deux colonnes : interpolation linéaire. OP<sub>lim</sub> &lt; ${A.cols[0]} m → colonne ${A.cols[0]} m ; OP<sub>lim</sub> ≥ ${A.cols.at(-1)} m → dernière colonne.</p>
+    <div class="row"><button class="b s" id="aAddR">+ Ligne</button><button class="b s" id="aAddC">+ Colonne</button><button class="b s" id="aProj">Recharger la table projet</button><button class="b s" id="aDnv">Charger DNV cas de base</button></div>
+    <h3 style="margin-top:18px">Calculateur</h3>
+    <div class="grid g4"><label class="f">OP<sub>lim</sub> (m)<input type="number" step="0.01" id="qOp" value="3"></label><label class="f">Durée T<sub>pop</sub> (h)<input type="number" id="qH" value="24"></label><div class="kpi"><div class="k">α</div><div class="v" id="qA">–</div></div><div class="kpi"><div class="k">OP<sub>wf</sub> = OP<sub>lim</sub> × α</div><div class="v" id="qR">–</div></div></div>`;
+  const qc=()=>{ const op=num($('#qOp').value)||0, h=num($('#qH').value)||0; const {row,over}=alphaRowFor(h); const a=alphaAt(op,row); $('#qA').textContent=a.toFixed(3)+(over?' ⚠ > '+row.h+' h':''); $('#qR').textContent=`${r2(op)} × ${a.toFixed(3)} = ${r2(op*a)} m`; };
   $('#aName').oninput=e=>{A.name=e.target.value; save();};
-  $('#aMode').onchange=e=>{A.mode=e.target.value; save();};
   $$('[data-ac]',ed).forEach(el=>el.onchange=()=>{A.cols[+el.dataset.ac]=num(el.value)??0; save(); qc();});
   $$('[data-ah]',ed).forEach(el=>el.onchange=()=>{A.rows[+el.dataset.ah].h=num(el.value)??0; A.rows.sort((a,b)=>a.h-b.h); save(); renderAlpha();});
   $$('[data-av]',ed).forEach(el=>el.onchange=()=>{const [i,j]=el.dataset.av.split(',').map(Number); A.rows[i].a[j]=num(el.value)??0; save(); qc();});
   $$('[data-adel]',ed).forEach(el=>el.onclick=()=>{A.rows.splice(+el.dataset.adel,1); save(); renderAlpha();});
-  $$('[data-adelc]',ed).forEach(el=>el.onclick=()=>{const j=+el.dataset.adelc; A.cols.splice(j,1); A.rows.forEach(r=>r.a.splice(j,1)); save(); renderAlpha();});
-  $('#aAddR').onclick=()=>{A.rows.push({h:(A.rows.at(-1)?.h||0)+12,a:A.cols.map(()=>0.5)}); save(); renderAlpha();};
+  $('#aAddR').onclick=()=>{A.rows.push({h:(A.rows.at(-1)?.h||0)+24,a:A.cols.map(()=>0.5)}); save(); renderAlpha();};
   $('#aAddC').onclick=()=>{A.cols.push((A.cols.at(-1)||0)+1); A.rows.forEach(r=>r.a.push(r.a.at(-1)??0.5)); save(); renderAlpha();};
-  $('#aDnv').onclick=()=>{S.alpha=defaultState().alpha; save(); renderAlpha(); toast('Table DNV cas de base rechargée');};
-  $('#aPaste').onclick=()=>{
-    openDlg('Coller une table α', `<p class="help">Première ligne : vide puis les Hs (ex. « TPOP | 1 | 2 | 4 | 6 »). Lignes suivantes : durée en heures puis les α.</p><textarea id="apA"></textarea><div class="row end" style="margin-top:10px"><button class="b" data-close>Annuler</button><button class="b p" id="apGo">Importer</button></div>`);
-    $('#apGo').onclick=()=>{ const L=$('#apA').value.split(/\r?\n/).filter(l=>l.trim()).map(l=>(l.includes('\t')?l.split('\t'):l.trim().split(/[;\s]+/)).map(s=>s.trim().replace(',', '.')));
-      if(L.length<2) return toast('Table trop courte'); const cols=L[0].slice(1).map(x=>num(String(x).replace(/[^\d.]/g,''))).filter(x=>x!=null);
-      const rows=L.slice(1).map(r=>({h:num(String(r[0]).replace(/[^\d.]/g,'')), a:cols.map((_,j)=>num(r[j+1])??0)})).filter(r=>r.h!=null);
-      S.alpha.cols=cols; S.alpha.rows=rows.sort((a,b)=>a.h-b.h); save(); closeDlg(); renderAlpha(); };
-  };
+  $('#aProj').onclick=()=>{S.alpha=JSON.parse(JSON.stringify(ALPHA_PROJECT)); save(); renderAlpha();};
+  $('#aDnv').onclick=()=>{S.alpha=JSON.parse(JSON.stringify(ALPHA_DNV)); save(); renderAlpha();};
   $('#qOp').oninput=qc; $('#qH').oninput=qc; qc();
 }
-/* ----- tasks ----- */
+/* ---- 4 tâches ---- */
 function renderTasks(){
   const L=$('#taskList');
-  L.innerHTML = S.tasks.map((k,i)=>{
-    const TR=(+k.tpop||0)+(+k.cont||0);
+  L.innerHTML=S.tasks.map((k,i)=>{
+    const TP=tpopOf(k), TR=trOf(k), lay=k.op==='Cable laying';
     return `<div class="card head" data-task="${k.id}">
-      <div class="row" style="justify-content:space-between"><h3 style="margin:0">Tâche ${i+1} – ${esc(k.name)}</h3>
+      <div class="row sb"><h3 style="margin:0">Tâche ${i+1} – ${esc(taskName(k))}</h3>
         <div class="row"><label><input type="checkbox" data-k="include" ${k.include?'checked':''}> Dans le rapport</label>
-        <button class="b s" data-act="up" aria-label="Monter">↑</button><button class="b s" data-act="dup">Dupliquer</button><button class="b s d" data-act="del">Supprimer</button></div></div>
-      <div class="grid g3" style="margin-top:10px">
-        <label class="f">Nom de la tâche<input type="text" data-k="name" value="${esc(k.name)}"></label>
-        <label class="f">Type d'opération (case du rapport)<select data-k="op">${OP_TYPES.concat(OP_TYPES.includes(k.op)||!k.op?[]:[k.op]).map(o=>`<option ${o===k.op?'selected':''}>${esc(o)}</option>`).join('')}<option value="">(aucune)</option></select></label>
-        <label class="f">Critère de Hs<select data-k="tableId"><option value="">Limite Hs simple (omnidirectionnelle)</option>${S.tables.map(t=>`<option value="${t.id}" ${t.id===k.tableId?'selected':''}>Analyse : ${esc(t.name)}</option>`).join('')}</select></label>
+        <button class="b s" data-act="up" aria-label="Monter la tâche">↑</button><button class="b s" data-act="dup">Dupliquer</button><button class="b s d" data-act="del">Supprimer</button></div></div>
+      <div class="grid g4" style="margin-top:10px">
+        <label class="f">Type d'opération<select data-k="op">${OP_TYPES.map(o=>`<option ${o===k.op?'selected':''}>${esc(o)}</option>`).join('')}</select></label>
+        <label class="f">Libellé <small>optionnel</small><input type="text" data-k="label" value="${esc(k.label||'')}" placeholder="${esc(k.op)}"></label>
+        <label class="f">Analyse (Hs limite)<select data-k="tableId"><option value="">Limite Hs simple (toutes directions)</option>${S.tables.map(t=>`<option value="${t.id}" ${t.id===k.tableId?'selected':''}>${esc(t.name)}</option>`).join('')}</select></label>
         ${k.tableId?'':`<label class="f">OP<sub>lim</sub> Hs (m)<input type="number" step="0.01" data-k="oplim" value="${k.oplim??''}"></label>`}
-        <label class="f">Cap du navire<select data-k="hMode"><option value="fixed" ${k.hMode!=='range'?'selected':''}>Cap fixe</option><option value="range" ${k.hMode==='range'?'selected':''}>Plage de caps (cas le plus défavorable)</option></select></label>
-        <label class="f">${k.hMode==='range'?'Cap de (°)':'Cap (°)'}<input type="number" data-k="heading" value="${k.heading??''}"></label>
-        ${k.hMode==='range'?`<label class="f">à (°) <small>sens horaire</small><input type="number" data-k="heading2" value="${k.heading2??''}"></label>`:''}
+        <label class="f">Heading cible du navire (°)<input type="number" min="0" max="359" data-k="heading" value="${k.heading??''}"></label>
         <label class="f">Début de l'opération (${tzLabel()})<input type="datetime-local" data-start value="${utcToInput(k.start)}"></label>
-        <label class="f">Durée T<sub>POP</sub> (h)<input type="number" step="0.5" data-k="tpop" value="${k.tpop??''}"></label>
+        ${lay?`<label class="f">Longueur de pose (m)<input type="number" data-k="layLength" value="${k.layLength??''}"></label><label class="f">Vitesse de pose (m/h)<input type="number" data-k="laySpeed" value="${k.laySpeed??''}"></label>`:''}
+        <label class="f">T<sub>POP</sub> (h) ${lay?'<small>= longueur / vitesse</small>':''}<input type="number" step="0.5" data-k="tpop" value="${lay&&num(k.layLength)!=null&&num(k.laySpeed)?r1(TP):(k.tpop??'')}" ${lay&&num(k.layLength)!=null&&num(k.laySpeed)?'readonly':''}></label>
         <label class="f">Contingence (h)<input type="number" step="0.5" data-k="cont" value="${k.cont??''}"></label>
-        <div class="kpi"><div class="k">T<sub>R</sub> = T<sub>POP</sub> + contingence · fin</div><div class="v">${r1(TR)} h</div><div class="k">${fmtFull(k.start+TR*H)}</div></div>
         <label class="f">Vent max Ws10 (m/s) <small>vide = non vérifié</small><input type="number" step="0.5" data-k="windMax" value="${k.windMax??''}"></label>
-        <label class="f">α imposé <small>vide = table α</small><input type="number" step="0.01" data-k="alphaOv" value="${k.alphaOv??''}"></label>
         <label class="f">Notes<input type="text" data-k="notes" value="${esc(k.notes||'')}"></label>
       </div>
-      <div class="row" style="margin-top:10px"><button class="b p" data-act="find">🔎 Trouver la 1ʳᵉ fenêtre OK</button><span data-status></span></div>
-    </div>`;}).join('') || '<p>Aucune tâche.</p>';
+      <div class="kpis"><div class="kpi"><div class="k">T<sub>POP</sub> · fin</div><div class="v">${r1(TP)} h</div><div class="k">${fmtFull(k.start+TP*H)}</div></div>
+        <div class="kpi"><div class="k">T<sub>R</sub> = T<sub>POP</sub> + contingence · fin</div><div class="v">${r1(TR)} h</div><div class="k">${fmtFull(k.start+TR*H)}</div></div></div>
+      ${TP>72?'<div class="warnbox">⚠ T<sub>POP</sub> &gt; 72 h : opération <strong>non weather-restricted</strong> (DNV-ST-N001). Les critères doivent alors reposer sur des statistiques d\'extrêmes, pas sur une prévision avec α.</div>':''}
+      <div class="row"><button class="b p" data-act="find">🔎 Trouver la 1ʳᵉ fenêtre OK</button><span data-status></span></div>
+    </div>`;}).join('')||'<p>Aucune tâche.</p>';
   $$('[data-task]',L).forEach(card=>{
     const k=S.tasks.find(t=>t.id===card.dataset.task);
-    bindFields(card,k,key=>{ if(['tableId','hMode','tpop','cont','op'].includes(key)) renderTasks(); else taskStatus(card,k); });
-    card.querySelector('[data-start]').addEventListener('change',e=>{ const t=zonedToUtc(e.target.value); if(t!=null){k.start=t; save(); renderTasks();} });
+    bindFields(card,k,key=>{ if(['tableId','op','tpop','cont','layLength','laySpeed','label'].includes(key)) { if(key==='label') return taskStatus(card,k); renderTasks(); } else taskStatus(card,k); });
+    card.querySelector('[data-start]').addEventListener('change',e=>{ const t=zonedToUtc(e.target.value); if(t!=null){ k.start=t; save(); renderTasks(); } });
     card.querySelector('[data-act=del]').onclick=()=>{ S.tasks=S.tasks.filter(t=>t!==k); save(); renderTasks(); };
-    card.querySelector('[data-act=dup]').onclick=()=>{ S.tasks.splice(S.tasks.indexOf(k)+1,0,Object.assign({},k,{id:uid(),name:k.name+' (copie)'})); save(); renderTasks(); };
+    card.querySelector('[data-act=dup]').onclick=()=>{ S.tasks.splice(S.tasks.indexOf(k)+1,0,Object.assign({},k,{id:uid(),label:(taskName(k))+' (copie)'})); save(); renderTasks(); };
     card.querySelector('[data-act=up]').onclick=()=>{ const i=S.tasks.indexOf(k); if(i>0){ S.tasks.splice(i,1); S.tasks.splice(i-1,0,k); save(); renderTasks(); } };
-    card.querySelector('[data-act=find]').onclick=()=>{ if(!usedSources().length) return toast('Importez d\'abord un bulletin (étape 5)'); const t=findFirstWindow(k); if(t==null) toast('Aucune fenêtre complète OK dans la période couverte par la prévision', 6000); else { save(); toast('Fenêtre trouvée : début '+fmtFull(t)); } renderTasks(); };
+    card.querySelector('[data-act=find]').onclick=()=>{ if(!usedSources().length) return toast('Importez d\'abord un bulletin (étape 5)'); const t=findFirstWindow(k); if(t==null) toast('Aucune fenêtre complète OK dans la période couverte par la prévision',6000); else { save(); toast('Fenêtre trouvée : début '+fmtFull(t)); } renderTasks(); };
     taskStatus(card,k);
   });
 }
 function statusBadge(ev){
   if(!ev.per.length) return '<span class="badge na">Pas de météo</span>';
-  if(ev.per.some(r=>!r.covered)) return ev.per.some(r=>r.inWin.some(x=>!x.ok)) ? '<span class="badge bad">✖ Hors limites</span>' : '<span class="badge warn">⚠ Fenêtre non couverte par la prévision</span>';
+  if(ev.per.some(r=>!r.covered) && !ev.per.some(r=>r.flat.some(x=>!x.st.ok))) return '<span class="badge warn">⚠ Prévision trop courte</span>';
   return ev.ok ? '<span class="badge ok">✔ Dans les limites</span>' : '<span class="badge bad">✖ Hors limites</span>';
 }
-function taskStatus(card,k){ const ev=evalTask(k); const el=card.querySelector('[data-status]'); if(el) el.innerHTML = statusBadge(ev) + (ev.per.length?` <span class="muted">W<sub>dw</sub> ≈ ${ev.wdwOpen?'≥ ':''}${r0(ev.wdw)} h</span>`:''); }
-/* ----- weather ----- */
+function taskStatus(card,k){ const ev=evalTask(k); const el=card.querySelector('[data-status]'); if(el) el.innerHTML=statusBadge(ev)+(ev.per.length?` <span class="muted">W<sub>dw</sub> ${ev.wdwOpen?'≥ ':''}${r0(ev.wdw)} h · heading cible : ${clsLabel(headingClass(ev))}</span>`:''); }
+const clsLabel = c => ({ok:'<span class="chip ok">OK</span>',av:'<span class="chip av">À éviter</span>',no:'<span class="chip no">Interdit</span>'}[c]||'–');
+/* ---- 5 météo ---- */
 function renderWeather(){
   $('#wxLat').value=S.settings.lat??''; $('#wxLon').value=S.settings.lon??'';
-  try{ $('#windyKey').value = localStorage.getItem('wx_windy_key')||''; }catch(e){}
+  try{ $('#windyKey').value=localStorage.getItem('wx_windy_key')||''; }catch(e){}
   const L=$('#srcList');
   if(!S.sources.length){ L.innerHTML='<div class="card"><p class="muted" style="margin:0">Aucun bulletin chargé.</p></div>'; return; }
-  L.innerHTML = S.sources.map(s=>{
+  L.innerHTML=S.sources.map(s=>{
     const n=s.rows.length; const maxHs=Math.max(...s.rows.map(r=>r.hs));
-    return `<div class="src" data-src="${s.id}">
-      <div class="row" style="justify-content:space-between">
+    return `<div class="src ${s.test?'test':''}" data-src="${s.id}">
+      ${s.test?'<div class="badbox">✖ Clé Windy de TEST : données volontairement mélangées et modifiées par Windy. Elles sont exclues de la vérification.</div>':''}
+      <div class="row sb">
         <div><span class="sw" style="background:${s.color}"></span><strong>${esc(s.provider)}</strong> – ${esc(s.location||'')} <span class="muted">${esc(s.file||'')}</span></div>
-        <div class="row"><label><input type="checkbox" data-use ${s.use?'checked':''}> Utiliser pour la vérification</label><button class="b s d" data-del>Supprimer</button></div>
+        <div class="row"><label><input type="checkbox" data-use ${s.use&&!s.test?'checked':''} ${s.test?'disabled':''}> Utiliser pour la vérification</label><button class="b s d" data-del>Supprimer</button></div>
       </div>
       <div class="kpis">
         <div class="kpi"><div class="k">Émis le (${tzLabel()})</div><div class="v" style="font-size:16px">${fmtFull(s.issued)}</div></div>
@@ -996,24 +1153,23 @@ function renderWeather(){
         <div class="kpi"><div class="k">Pas de temps</div><div class="v">${n}</div></div>
         <div class="kpi"><div class="k">Hs max</div><div class="v">${r1(maxHs)} m</div></div>
       </div>
-      <div class="row"><label class="f" style="flex-direction:row;align-items:center;gap:8px">Fournisseur (case du rapport)<select data-prov style="width:auto">${PROVIDERS.map(p=>`<option ${p===s.provider?'selected':''}>${p}</option>`).join('')}</select></label>
-        <span class="muted">${esc(s.issuedTxt||'')} · ${esc(s.tzNote||'')}${s.provider==='DTN'?' · direction = composante dominante (mer du vent / houle)':''}</span></div>
-      ${s.pages?.length?`<details><summary>Pages du bulletin à joindre au rapport (${s.pages.filter(p=>p.sel).length} sélectionnée·s)</summary><div class="thumbs">${s.pages.map((p,i)=>`<label><img src="${p.img}" alt="Page ${i+1}"><span><input type="checkbox" data-pg="${i}" ${p.sel?'checked':''}> Page ${i+1}</span></label>`).join('')}</div></details>`:''}
-      <details><summary>Voir les données lues</summary><div class="scroll"><table class="t"><thead><tr><th>Date (${tzLabel()})</th><th>Hs (m)</th><th>Tp (s)</th><th>Dir (°)</th><th>Ws10 (m/s)</th><th>Rafale (m/s)</th><th>Mer du vent Hs/Dir</th><th>Houle Hs/Dir</th></tr></thead><tbody>
-        ${s.rows.map(r=>`<tr><td>${fmtFull(r.t)}</td><td>${r1(r.hs)}</td><td>${r1(r.tp)}</td><td>${r0(r.dir)}</td><td>${r1(r.ws)}</td><td>${r1(r.gust)}</td><td>${r.comps?`${r1(r.comps[0]?.h)} / ${r0(r.comps[0]?.dir)}`:'–'}</td><td>${r.comps?`${r1(r.comps[1]?.h)} / ${r0(r.comps[1]?.dir)}`:'–'}</td></tr>`).join('')}
-      </tbody></table></div></details>
-    </div>`;}).join('');
+      <div class="row"><label class="f" style="flex-direction:row;align-items:center;gap:8px">Fournisseur<select data-prov style="width:auto">${PROVIDERS.map(p=>`<option ${p===s.provider?'selected':''}>${p}</option>`).join('')}</select></label>
+        <span class="muted">${esc(s.issuedTxt||'')} · ${esc(s.tzNote||'')}${s.provider==='DTN'?' · direction mer totale = moyenne pondérée (Hs²) mer du vent / houle':''}</span></div>
+      ${s.pages?.length?`<details><summary>Pages PDF du bulletin (option « pages complètes » du rapport)</summary><div class="thumbs">${s.pages.map((p,i)=>`<label><img src="${p.img}" alt="Page ${i+1}"><span><input type="checkbox" data-pg="${i}" ${p.sel?'checked':''}> Page ${i+1}</span></label>`).join('')}</div></details>`:''}
+      <details><summary>Voir les données lues</summary><div class="scroll"><table class="t"><thead><tr><th>Date (${tzLabel()})</th><th>Hs (m)</th><th>Tp (s)</th><th>Dir mer totale</th><th>Ws10 (m/s)</th><th>Rafale (m/s)</th><th>Mer du vent Hs/Dir</th><th>Houle Hs/Dir</th></tr></thead><tbody>
+        ${s.rows.map(r=>`<tr><td>${fmtFull(r.t)}</td><td>${r1(r.hs)}</td><td>${r1(r.tp)}</td><td>${d3(r.dir)}</td><td>${r1(r.ws)}</td><td>${r1(r.gust)}</td><td>${r.comps?`${r1(r.comps[0]?.h)} / ${d3(r.comps[0]?.dir)}`:'–'}</td><td>${r.comps?`${r1(r.comps[1]?.h)} / ${d3(r.comps[1]?.dir)}`:'–'}</td></tr>`).join('')}
+      </tbody></table></div></details></div>`;}).join('');
   $$('[data-src]',L).forEach(el=>{
     const s=S.sources.find(x=>x.id===el.dataset.src);
-    el.querySelector('[data-use]').onchange=e=>{s.use=e.target.checked; save(); updateDot();};
+    el.querySelector('[data-use]').onchange=e=>{ s.use=e.target.checked; save(); updateDot(); };
     el.querySelector('[data-del]').onclick=()=>{ S.sources=S.sources.filter(x=>x!==s); recolor(); save(); renderAll(); };
-    el.querySelector('[data-prov]').onchange=e=>{s.provider=e.target.value; save();};
-    $$('[data-pg]',el).forEach(c=>c.onchange=()=>{s.pages[+c.dataset.pg].sel=c.checked; save();});
+    el.querySelector('[data-prov]').onchange=e=>{ s.provider=e.target.value; save(); };
+    $$('[data-pg]',el).forEach(c=>c.onchange=()=>{ s.pages[+c.dataset.pg].sel=c.checked; save(); });
   });
 }
 function pasteDialog(txt='', name='tableau'){
   openDlg('Importer un tableau de prévision', `
-    <p class="help">Colonnes reconnues (en-tête obligatoire) : <strong>Date/Heure</strong> (2026-11-22 12:00 ou 22/11/2026 12:00), <strong>Hs</strong>, Tp, Dir (° ou WSW), Ws (m/s). Séparateur tabulation, ; ou ,</p>
+    <p class="help">Colonnes reconnues (en-tête obligatoire) : <strong>Date/Heure</strong> (2026-11-22 12:00 ou 22/11/2026 12:00), <strong>Hs</strong>, Tp, Dir (° ou WSW, direction de la mer totale), Ws (m/s). Séparateur tabulation, ; ou ,</p>
     <textarea id="pwx" aria-label="Données">${esc(txt)}</textarea>
     <div class="grid g3" style="margin-top:8px">
       <label class="f">Fournisseur<select id="pwxP">${PROVIDERS.map(p=>`<option>${p}</option>`).join('')}</select></label>
@@ -1021,131 +1177,166 @@ function pasteDialog(txt='', name='tableau'){
       <label class="f">Émission du bulletin (${tzLabel()})<input type="datetime-local" id="pwxI" value="${utcToInput(Math.floor(Date.now()/H)*H)}"></label>
     </div>
     <div class="row end" style="margin-top:12px"><button class="b" data-close>Annuler</button><button class="b p" id="pwxGo">Importer</button></div>`);
-  $('#pwxGo').onclick=()=>{ try{ const rows=parseDelimited($('#pwx').value, $('#pwxZ').value); addSource({provider:$('#pwxP').value, location:name, issued:zonedToUtc($('#pwxI').value)??Date.now(), issuedTxt:'Tableau importé', tzNote:$('#pwxZ').value, rows}); closeDlg(); toast(`${rows.length} lignes importées`);}catch(e){ toast(e.message,6000);} };
+  $('#pwxGo').onclick=()=>{ try{ const rows=parseDelimited($('#pwx').value,$('#pwxZ').value); addSource({provider:$('#pwxP').value,location:name,issued:zonedToUtc($('#pwxI').value)??Date.now(),issuedTxt:'Tableau importé',tzNote:$('#pwxZ').value,rows}); closeDlg(); toast(`${rows.length} lignes importées`); }catch(e){ toast(e.message,6000); } };
 }
-/* ----- evaluation ----- */
+/* ---- 6 vérification ---- */
 function evalSettingsHTML(){
   const s=S.settings;
   return `<div class="grid g3">
-    <label class="f">Direction des vagues utilisée<select data-k="dirMode"><option value="dominant" ${s.dirMode!=='all'?'selected':''}>Mer totale (ou composante dominante)</option><option value="all" ${s.dirMode==='all'?'selected':''}>Conservatif : aussi chaque composante ≥ 0,3 m</option></select></label>
-    <label class="f">Tp hors du tableau d'analyse<select data-k="tpOut"><option value="clamp" ${s.tpOut!=='reject'?'selected':''}>Utiliser la colonne la plus proche (signalé ⚠)</option><option value="reject" ${s.tpOut==='reject'?'selected':''}>Considérer comme interdit</option></select></label>
-    <label class="f">Vent<select data-k="alphaWind"><option value="false" ${!s.alphaWind?'selected':''}>Limite de vent sans α</option><option value="true" ${s.alphaWind?'selected':''}>Limite de vent × α</option></select></label>
+    <label class="f">Méthode α utilisée dans le rapport<select data-s="method"><option value="global" ${s.method==='global'?'selected':''}>Globale : α sur T_R, état de mer sur toute la fenêtre</option><option value="disc" ${s.method==='disc'?'selected':''}>Discrétisée : α par tranche 0-4 h, 4-12 h, 12-24 h…</option></select></label>
+    <label class="f">Méthode globale : durée pour α<select data-s="alphaBasis"><option value="TR" ${s.alphaBasis!=='TPOP'?'selected':''}>T_R (T_POP + contingence)</option><option value="TPOP" ${s.alphaBasis==='TPOP'?'selected':''}>T_POP</option></select></label>
+    <label class="f">Méthode discrétisée : tranches comptées depuis<select data-s="bandOrigin"><option value="start" ${s.bandOrigin!=='issue'?'selected':''}>le début de l'opération</option><option value="issue" ${s.bandOrigin==='issue'?'selected':''}>l'émission du bulletin (plus conservatif)</option></select></label>
+    <label class="f">Découpage en 2 états de mer si Tp varie de plus de (s)<input type="number" step="0.5" data-s="dTp" value="${s.dTp}"></label>
+    <label class="f">… ou si la direction des vagues tourne de plus de (°)<input type="number" step="5" data-s="dDir" value="${s.dDir}"></label>
+    <label class="f">Heading « à éviter » au-delà de (% de OP<sub>wf</sub>)<input type="number" step="1" data-s="avoid" value="${s.avoid}"></label>
+    <label class="f">Tp moyen hors de l'analyse<select data-s="tpOut"><option value="clamp" ${s.tpOut!=='reject'?'selected':''}>Colonne la plus proche (signalé)</option><option value="reject" ${s.tpOut==='reject'?'selected':''}>Considérer comme interdit</option></select></label>
   </div>`;
+}
+function allowTable(ev, rep=false){
+  const g=ev.gov; if(!g) return '';
+  return `<table class="${rep?'':'t'}"><thead><tr><th class="l">Période (${tzLabel()})</th><th>Ligne α</th><th>Hs max</th><th>Tp moy.</th><th>Dir. vagues moy.</th><th>Heading rel.</th><th>OP<sub>lim</sub> analyse</th><th>α</th><th>OP<sub>wf</sub> = OP<sub>lim</sub> × α</th></tr></thead><tbody>
+  ${g.periods.map(p=>p.states.map((st,i)=>`<tr>
+    <td class="l nw">${fmtH(st.a)} → ${fmtH(st.b)}${p.states.length>1?` <em>(mer ${i+1}/2)</em>`:''}</td>
+    ${i===0?`<td rowspan="${p.states.length}" class="c">${p.label}${p.over?' ⚠':''}</td>`:''}
+    <td class="c">${r2(st.hsMax)} m</td><td class="c">${r1(st.tpMean)} s${st.flags.some(f=>/Tp/.test(f))?' ⚠':''}</td><td class="c">${d3(st.dirMean)}</td><td class="c">${d3(st.rel)}</td>
+    <td class="c">${r2(st.oplim)} m${st.star?'*':''}</td><td class="c">${st.alpha.toFixed(3)}</td><td class="c nw"><strong>${r2(st.oplim)} × ${st.alpha.toFixed(2)} = ${r2(st.opwf)} m</strong></td></tr>`).join('')).join('')}
+  </tbody></table>${g.flat.some(x=>x.st.split)?`<div class="${rep?'small':'muted'}" style="font-size:12px">Découpage en 2 états de mer : ${[...new Set(g.flat.filter(x=>x.st.split).map(x=>x.st.reason))].map(esc).join(' ; ')}.</div>`:''}`;
+}
+function resultTable(ev, rep=false){
+  const g=ev.gov; if(!g) return '';
+  const ok=b=>rep?(b?'<span class="ok">✔ OK</span>':'<span class="no">✖ NOK</span>'):(b?'<span class="badge ok">✔ OK</span>':'<span class="badge bad">✖ NOK</span>');
+  return `<table class="${rep?'':'t'}"><thead><tr><th class="l">Période / état de mer</th><th>Hs max prévu</th><th>OP<sub>wf</sub> admissible</th><th>Utilisation</th><th>Vent max prévu / limite</th><th>Résultat</th></tr></thead><tbody>
+  ${g.flat.map(({p,st},i)=>`<tr class="${st.ok?'':'nok'}"><td class="l nw">${fmtH(st.a)} → ${fmtH(st.b)}</td><td class="c">${r2(st.hsMax)} m</td><td class="c">${r2(st.opwf)} m</td><td class="c">${r0(100*st.util)} %</td><td class="c">${r1(st.wsMax)}${st.windLim!=null?' / '+r1(st.windLim):''} m/s</td><td class="c">${ok(st.ok)}</td></tr>`).join('')}
+  </tbody></table>`;
+}
+function roseText(ev){
+  const no=headingRanges(ev.rose,'no'), av=headingRanges(ev.rose,'av'), okk=headingRanges(ev.rose,'ok');
+  const hc=headingClass(ev);
+  return `<div class="hd-list">
+    <div><span class="chip no">Interdits</span> ${no||'aucun'}</div>
+    <div><span class="chip av">À éviter</span> ${av||'aucun'} <span class="muted" style="font-size:12px">(utilisation &gt; ${S.settings.avoid} %)</span></div>
+    <div><span class="chip ok">Autorisés</span> ${okk==='tous'?'tous les caps':(okk||'aucun')}</div>
+    <div style="margin-top:6px"><strong>Heading cible ${d3(ev.task.heading)} :</strong> ${clsLabel(hc)} ${hc==='ok'?'':hc==='av'?'– marge faible':'– à modifier'}</div></div>`;
 }
 function renderEval(){
   const es=$('#evalSettings'); es.innerHTML=evalSettingsHTML();
-  $$('[data-k]',es).forEach(el=>el.onchange=()=>{ S.settings[el.dataset.k] = el.value==='true'?true:el.value==='false'?false:el.value; save(); renderEval(); });
+  $$('[data-s]',es).forEach(el=>el.onchange=()=>{ const k=el.dataset.s; S.settings[k]= el.type==='number'?num(el.value):el.value; save(); renderEval(); });
   const out=$('#evalOut');
-  if(!usedSources().length){ out.innerHTML='<div class="card"><p>Importez un bulletin météo à l\'étape 5 et cochez « Utiliser pour la vérification ».</p></div>'; updateDot(); return; }
-  out.innerHTML = S.tasks.map(k=>{
-    const ev=evalTask(k); const tbl=S.tables.find(t=>t.id===k.tableId);
+  if(!usedSources().length){ out.innerHTML='<div class="card"><p>Importez un bulletin à l\'étape 5 et cochez « Utiliser pour la vérification ».</p></div>'; updateDot(); return; }
+  out.innerHTML=S.tasks.map(k=>{
+    const ev=evalTask(k), evG=evalTask(k,'global'), evD=evalTask(k,'disc'); const tbl=S.tables.find(t=>t.id===k.tableId);
+    const mname = m=>m==='global'?'Globale':'Discrétisée';
     return `<div class="card head">
-      <div class="row" style="justify-content:space-between"><h3 style="margin:0">${esc(k.name)}</h3>${statusBadge(ev)}</div>
-      <div class="muted" style="font-size:13px">Critère : ${tbl?`analyse « ${esc(tbl.name)} »`:`OP<sub>lim</sub> = ${r2(num(k.oplim))} m`} · cap ${esc(headingText(k))} · début ${fmtFull(k.start)} (${tzLabel()})</div>
+      <div class="row sb"><h3 style="margin:0">${esc(taskName(k))} <span class="muted" style="font-weight:400;font-size:14px">· ${esc(k.op)}</span></h3>${statusBadge(ev)}</div>
+      <div class="muted" style="font-size:13px">${tbl?`Analyse « ${esc(tbl.name)} »`:`OP<sub>lim</sub> = ${r2(num(k.oplim))} m`} · heading cible ${d3(k.heading)} · début ${fmtFull(k.start)} (${tzLabel()}) · source gouvernante : ${esc(ev.gov?.src.provider||'–')}</div>
+      ${ev.nonRestricted?'<div class="badbox">T<sub>POP</sub> &gt; 72 h : opération non weather-restricted. La méthode α n\'est pas applicable : justification par statistiques d\'extrêmes requise.</div>':''}
+      ${ev.per.filter(r=>!r.covered).map(r=>`<div class="warnbox">⚠ ${esc(r.src.provider)} ne couvre pas toute la fenêtre T<sub>R</sub> (fin du bulletin ${fmtFull(r.src.rows.at(-1).t)}).</div>`).join('')}
       <div class="kpis">
-        <div class="kpi"><div class="k">T<sub>R</sub> requis</div><div class="v">${r1(ev.TR)} h</div></div>
-        <div class="kpi"><div class="k">W<sub>dw</sub> fenêtre météo</div><div class="v">${ev.wdwOpen?'≥ ':''}${r0(ev.wdw)} h</div></div>
+        <div class="kpi"><div class="k">T<sub>POP</sub> / T<sub>R</sub></div><div class="v">${r1(ev.TP)} / ${r1(ev.TR)} h</div></div>
+        <div class="kpi"><div class="k">W<sub>dw</sub> (fenêtre météo)</div><div class="v">${ev.wdwOpen?'≥ ':''}${r0(ev.wdw)} h</div></div>
         <div class="kpi"><div class="k">T<sub>R</sub> &lt; W<sub>dw</sub> ?</div><div class="v">${ev.trOk?'<span style="color:var(--ok)">✔ Oui</span>':'<span style="color:var(--bad)">✖ Non</span>'}</div></div>
-        <div class="kpi"><div class="k">Hs prévu max (fenêtre)</div><div class="v">${r2(Math.max(...ev.per.map(r=>r.maxHs)))} m</div></div>
-        <div class="kpi"><div class="k">Hs admissible min</div><div class="v">${r2(Math.min(...ev.per.map(r=>r.minAllow)))} m</div></div>
-        <div class="kpi"><div class="k">Taux d'utilisation max</div><div class="v">${r0(100*Math.max(...ev.per.map(r=>r.maxUtil)))} %</div></div>
+        <div class="kpi"><div class="k">Utilisation max</div><div class="v">${r0(100*Math.max(...ev.per.map(r=>r.maxUtil)))} %</div></div>
+        <div class="kpi"><div class="k">Méthode globale</div><div class="v" style="font-size:16px">${evG.ok?'✔ OK':'✖ NOK'} · ${r0(100*Math.max(...evG.per.map(r=>r.maxUtil)))} %</div></div>
+        <div class="kpi"><div class="k">Méthode discrétisée</div><div class="v" style="font-size:16px">${evD.ok?'✔ OK':'✖ NOK'} · ${r0(100*Math.max(...evD.per.map(r=>r.maxUtil)))} %</div></div>
       </div>
-      ${ev.TR>72?`<div class="warnbox">⚠ T<sub>R</sub> = ${r0(ev.TR)} h &gt; 72 h : au sens DNV-ST-N001 l'opération n'est plus « weather restricted » (α au-delà de 72 h extrapolé sur la dernière ligne de la table). À justifier (opération interruptible : T<sub>POP</sub> = intervalle entre bulletins + temps de mise en sécurité).</div>`:''}
-      ${ev.per.filter(r=>!r.covered).map(r=>`<div class="warnbox">⚠ ${esc(r.src.provider)} : la prévision ne couvre pas toute la fenêtre (jusqu'à ${fmtFull(r.src.rows.at(-1).t)}).</div>`).join('')}
-      <h3 style="margin-top:8px">Hs admissible par période (OP<sub>wf</sub> = OP<sub>lim</sub> × α)</h3>
-      ${bandsTable(ev,false)}
-      ${chartSVG(ev)}
-      <details><summary>Détail heure par heure</summary>${detailTable(ev)}</details>
+      <h4>Hs max admissible – méthode ${mname(ev.method)} (${esc(ev.gov?.src.provider||'')})</h4>${allowTable(ev)}
+      <h4>Résultat</h4>${resultTable(ev)}
+      ${ev.per.length>1?`<p class="muted" style="font-size:13px">${ev.per.map(r=>`${esc(r.src.provider)} : ${r.ok?'OK':'NOK'} (utilisation max ${r0(100*r.maxUtil)} %)`).join(' · ')}</p>`:''}
+      <h4>Hs prévu et Hs admissible</h4>${chartSVG(ev)}
+      <h4>Headings du navire</h4><div class="rosewrap"><div>${roseSVG(ev)}</div><div>${roseText(ev)}<p class="muted" style="font-size:12.5px">Couronne = cap du navire (vrai). Flèches bleues = provenance moyenne des vagues${ev.gov&&ev.gov.flat.length>1?' (M1, M2… = états de mer)':''}. Chaque cap est vérifié sur toutes les périodes et toutes les sources.</p></div></div>
     </div>`;}).join('');
   updateDot();
 }
-function bandsTable(ev, rep){
-  if(!ev.bands.length) return '<p class="muted">–</p>';
-  const cls = rep?'win':'t';
-  return ev.bands.map(g=>`${ev.bands.length>1||rep?`<div class="${rep?'small':''}" style="margin-top:6px"><span class="sw" style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${g.src.color};margin-right:5px"></span><strong>${esc(g.src.provider)}</strong> – émis ${fmtH(g.src.issued)}</div>`:''}
-  <table class="${cls}"><thead><tr><th class="l">Windows</th><th class="l">Max allowable Hs</th><th>Hs prévu max</th><th>Utilisation</th><th>Statut</th></tr></thead><tbody>
-    ${g.bands.map(b=>`<tr class="${b.ok?'':'nok'}"><td class="l" style="white-space:nowrap">${fmtH(b.a)} → ${fmtH(b.b)}</td><td class="l" style="white-space:nowrap"><strong>OP<sub>wf</sub></strong> = ${r2(b.minA.oplim)} x ${r2(b.minA.alpha)} = <strong>${r2(b.minA.allow)} m</strong></td><td>${r2(b.maxHs)} m</td><td>${r0(100*b.worst.util)} %</td><td style="white-space:nowrap">${b.ok?(rep?'<span class="chk">✔ OK</span>':'<span class="badge ok">✔ OK</span>'):(rep?'<span class="nchk">✖ NOK</span>':'<span class="badge bad">✖ NOK</span>')}</td></tr>`).join('')}
-  </tbody></table>`).join('');
-}
-function detailTable(ev, rep=false){
-  return ev.per.map(r=>`<div style="margin-top:8px"><strong>${esc(r.src.provider)}</strong> – émis ${fmtFull(r.src.issued)}<div class="${rep?'':'scroll'}"><table class="${rep?'ann':'t'}"><thead><tr><th>Date (${tzLabel()})</th><th>Délai (h)</th><th>Hs</th><th>Tp</th><th>Dir vagues</th><th>Cap</th><th>Dir rel.</th><th>OP<sub>lim</sub></th><th>α</th><th>Hs adm.</th><th>Util.</th><th>Ws10</th><th>Statut</th><th class="l">Remarques</th></tr></thead><tbody>
-    ${r.inWin.map(x=>`<tr class="${x.ok?'':'nok'}"><td>${fmt(x.t)}</td><td>${r0(x.lead)}</td><td>${r2(x.hs)}</td><td>${r1(x.tp)}</td><td>${r0(x.dir)}°</td><td>${x.head!=null?r0(x.head)+'°':'–'}</td><td>${x.rel!=null?r0(x.rel)+'°':'–'}</td><td>${r2(x.oplim)}${x.star?'*':''}</td><td>${r2(x.alpha)}</td><td>${r2(x.allow)}</td><td>${r0(100*x.util)}%</td><td>${r1(x.ws)}${x.windLim!=null?' / '+r1(x.windLim):''}</td><td>${x.ok?'✔':'✖'+(x.okHs?' vent':' Hs')}</td><td class="l">${esc(x.flags.join(', '))}</td></tr>`).join('')}
-  </tbody></table></div></div>`).join('');
-}
 function updateDot(){
   const d=$('#evalDot'); if(!usedSources().length){ d.style.background='transparent'; return; }
-  const evs=S.tasks.filter(t=>t.include).map(evalTask); d.style.background = evs.every(e=>e.ok)?'#3ccf6e':'#ff6b5e';
-  d.title = evs.every(e=>e.ok)?'Toutes les tâches dans les limites':'Au moins une tâche hors limites';
+  const evs=S.tasks.filter(t=>t.include).map(t=>evalTask(t)); d.style.background=evs.every(e=>e.ok)?'#3ccf6e':'#ff6b5e';
 }
-/* ----- report ----- */
-const CB = on => on ? '☒' : '☐';
+/* ---- 7 rapport ---- */
+const CB = on => on?'☒':'☐';
+function wxExtract(ev){
+  const g=ev.gov; if(!g) return '';
+  const a=ev.task.start, p1=a+ev.TP*H, b=a+ev.TR*H, b6=b+6*H;
+  const rows=g.src.rows; let i0=rows.findIndex(r=>r.t>=a); if(i0<0) return '<p class="small">Bulletin hors fenêtre.</p>'; if(i0>0 && rows[i0].t>a) i0--;
+  const sel=rows.slice(i0).filter(r=>r.t<=b6);
+  const ph=t=> t<p1-1e-6?['p1','T<sub>pop</sub>']: t<b-1e-6?['p2','Cont.']:['p3','+6 h'];
+  const hasHmax=sel.some(r=>r.hmax!=null);
+  const head=`<tr><th>Date</th><th>Phase</th><th>Hs</th>${hasHmax?'<th>Hmax</th>':''}<th>Tp</th><th>Dir</th><th>Ws10</th><th>OP<sub>wf</sub></th></tr>`;
+  const line=r=>{ const [c,l]=ph(r.t); const f=g.flat.find(x=>r.t>=x.st.a-1e-6&&r.t<=x.st.b+1e-6); const lim=f?.st.opwf; const bad=lim!=null&&r.hs>lim+1e-9;
+    return `<tr class="${c}"><td class="nw">${fmtH(r.t)}</td><td>${l}</td><td class="${bad?'bad':''}">${r1(r.hs)}</td>${hasHmax?`<td>${r1(r.hmax)}</td>`:''}<td>${r1(r.tp)}</td><td>${d3(r.dir)}</td><td>${r1(r.ws)}</td><td>${lim!=null?r2(lim):'–'}</td></tr>`; };
+  const nCol = sel.length>60?3:sel.length>26?2:1; const per=Math.ceil(sel.length/nCol);
+  let h='<div class="wx">'; for(let c=0;c<nCol;c++){ h+=`<table>${head}${sel.slice(c*per,(c+1)*per).map(line).join('')}</table>`; } h+='</div>';
+  h+=`<div class="small lg" style="margin-top:3px"><span><b style="background:#dbe7f7"></b>T<sub>pop</sub> : ${fmtH(a)} → ${fmtH(p1)}</span><span><b style="background:#fff0cc"></b>Contingence (part T<sub>R</sub>) : ${fmtH(p1)} → ${fmtH(b)}</span><span><b style="background:#eee"></b>T<sub>R</sub> + 6 h : ${fmtH(b)} → ${fmtH(b6)}</span><span>Hs, Hmax, OP<sub>wf</sub> en m · Tp en s · Ws10 en m/s · Dir = provenance mer totale · <span class="no">rouge</span> = Hs &gt; OP<sub>wf</sub></span></div>`;
+  return h;
+}
 function renderReport(){
-  const s=S.settings, p=S.project;
-  $('#repOpts').innerHTML = `
-    <label><input type="checkbox" data-o="chart" ${s.chart?'checked':''}> Graphique Hs prévu / admissible par tâche</label>
-    <label><input type="checkbox" data-o="pages" ${s.pages?'checked':''}> Pages du bulletin sélectionnées (capture de la prévision)</label>
-    <label><input type="checkbox" data-o="annex" ${s.annex?'checked':''}> Annexe : détail heure par heure (preuve)</label>`;
-  $$('[data-o]').forEach(el=>el.onchange=()=>{ s[el.dataset.o]=el.checked; save(); renderReport(); });
-  $('#shotInfo').innerHTML = S.shots.length?`${S.shots.length} capture(s) ajoutée(s) <button class="b s d" id="shotClr">Retirer</button>`:'';
-  if($('#shotClr')) $('#shotClr').onclick=()=>{S.shots=[]; save(); renderReport();};
+  const s=S.settings, R=s.rep, p=S.project;
+  $('#repOpts').innerHTML=`
+    <label><input type="checkbox" data-o="wx" ${R.wx?'checked':''}> Extrait du bulletin (début → T<sub>R</sub> + 6 h)</label>
+    <label><input type="checkbox" data-o="chart" ${R.chart?'checked':''}> Graphique Hs prévu / admissible</label>
+    <label><input type="checkbox" data-o="rose" ${R.rose?'checked':''}> Rose des headings interdits / à éviter</label>
+    <label><input type="checkbox" data-o="pages" ${R.pages?'checked':''}> Pages PDF complètes du bulletin (annexe)</label>
+    <label><input type="checkbox" data-o="annex" ${R.annex?'checked':''}> Comparaison des deux méthodes α (annexe)</label>`;
+  $$('[data-o]').forEach(el=>el.onchange=()=>{ R[el.dataset.o]=el.checked; save(); renderReport(); });
+  $('#shotInfo').innerHTML=S.shots.length?`${S.shots.length} capture(s) <button class="b s d" id="shotClr">Retirer</button>`:'';
+  if($('#shotClr')) $('#shotClr').onclick=()=>{ S.shots=[]; save(); renderReport(); };
   document.documentElement.style.setProperty('--foot-l', JSON.stringify(p.footer||''));
-  const tasks = S.tasks.filter(t=>t.include); const evs = tasks.map(evalTask); const src=usedSources();
-  const ops = new Set(tasks.map(t=>t.op));
-  const extraOps = [...ops].filter(o=>o && !OP_TYPES.includes(o));
-  const opPairs = [['1st end CPS','2nd end CPS'],['1st end pull-in','Cable laying'],['2nd end pull-in','Rock bag installation'],['Joint Overboarding + Laying','Jointing']];
-  extraOps.forEach((o,i)=>{ if(i%2===0) opPairs.push([o,extraOps[i+1]||'']); });
-  const provs = new Set(src.map(x=>x.provider));
-  const provList = ['StormGeo','DTN'].concat([...provs].filter(x=>x!=='StormGeo'&&x!=='DTN'));
-  const allOk = evs.length && evs.every(e=>e.ok); const trOk = evs.length && evs.every(e=>e.trOk);
-  const headOk = allOk;
-  const winds = tasks.map(t=>num(t.windMax)).filter(v=>v!=null);
-  const maxWsF = Math.max(0,...evs.flatMap(e=>e.per.map(r=>r.maxWs)));
-  const logo = p.logo || LOGO_DEFAULT;
-  let h = `<div class="rep">
-    <div class="rh"><img src="${logo}" alt=""><div class="disc">${esc(p.disclaimer)}</div></div>
-    <h1>${esc(p.title)}</h1>
-    <table><tr><td style="width:18%">Project</td><td style="width:32%">${esc(p.project)}</td><td style="width:22%">Location</td><td>${esc(p.location)}</td></tr>
-      <tr><td>Date</td><td>${esc(p.date)}</td><td>Vessel's Name (if applicable)</td><td>${esc(p.vessel)}</td></tr>
-      <tr><td>Time</td><td>${esc(p.time)}</td><td>Employer</td><td>${esc(p.employer)}</td></tr></table>
+  document.documentElement.style.setProperty('--foot-c', JSON.stringify(p.rev||''));
+  const tasks=S.tasks.filter(t=>t.include), evs=tasks.map(t=>evalTask(t)), src=usedSources();
+  const ops=new Set(tasks.map(t=>t.op));
+  const govIds=new Set(evs.map(e=>e.gov?.src.id).filter(Boolean));
+  const provs=new Map(); src.forEach(x=>provs.set(x.provider, (provs.get(x.provider)||false) || govIds.has(x.id)));
+  const provList=['StormGeo','DTN'].concat([...provs.keys()].filter(x=>x!=='StormGeo'&&x!=='DTN'));
+  const allOk=evs.length&&evs.every(e=>e.ok), trOk=evs.length&&evs.every(e=>e.trOk), headOk=evs.length&&evs.every(e=>headingClass(e)!=='no');
+  const mname=s.method==='global'?`globale (α lu sur ${s.alphaBasis==='TPOP'?'T<sub>POP</sub>':'T<sub>R</sub>'}, état de mer sur toute la fenêtre)`:`discrétisée (α par tranche ${S.alpha.rows.map(r=>r.h).join(' / ')} h depuis ${s.bandOrigin==='issue'?"l'émission du bulletin":"le début de l'opération"})`;
+  const logo=p.logo||LOGO_DEFAULT;
+  const opRows=[]; for(let i=0;i<OP_TYPES.length;i+=2) opRows.push([OP_TYPES[i],OP_TYPES[i+1]]);
+  let h=`<div class="rep">
+    <div class="rh"><img src="${logo}" alt=""><div class="tt">${esc(p.title)}</div><div class="rv">${esc(p.rev)}<br>${esc(p.date)}</div></div>
+    <table class="blk"><tr><th style="width:16%">Project</th><td style="width:34%">${esc(p.project)}</td><th style="width:16%">Location</th><td>${esc(p.location)}</td></tr>
+      <tr><th>Date</th><td>${esc(p.date)}</td><th>Vessel</th><td>${esc(p.vessel)}</td></tr>
+      <tr><th>Time</th><td>${esc(p.time)}</td><th>Employer</th><td>${esc(p.employer)}</td></tr></table>
     <table class="blk"><tr><td colspan="4" class="sh">Operation</td></tr>
-      ${opPairs.map(([a,b])=>`<tr><td>${esc(a)}</td><td class="cb" style="width:8%">${a?CB(ops.has(a)):''}</td><td>${esc(b)}</td><td class="cb" style="width:8%">${b?CB(ops.has(b)):''}</td></tr>`).join('')}</table>
-    <table class="blk"><tr><td colspan="5" class="sh">Conservative forecast</td></tr>
-      <tr>${provList.map(pv=>`<td>${esc(pv)}</td><td class="cb">${CB(provs.has(pv))}</td>`).join('')}</tr>
-      <tr><td colspan="${provList.length*2}" class="small">${src.map(x=>`${esc(x.provider)} – ${esc(x.location||'')} – émis le ${fmtFull(x.issued)} (${tzLabel()})`).join('<br>')||'Aucun bulletin'}</td></tr></table>
-    <table class="blk"><tr><td style="width:18%">Max allowable Hs<br>(OP<sub>lim</sub> * α)</td><td>
-      ${evs.map(ev=>`<div class="ttl">${esc(ev.task.name)} :</div>
-        <div class="small">Critère : ${ev.task.tableId?`analyse « ${esc(S.tables.find(t=>t.id===ev.task.tableId)?.name||'')} »`:`OP<sub>lim</sub> = ${r2(num(ev.task.oplim))} m`} · cap ${esc(headingText(ev.task))} · α : ${num(ev.task.alphaOv)!=null?'imposé '+r2(num(ev.task.alphaOv)):esc(S.alpha.name)}</div>
-        ${bandsTable(ev,true)}`).join('')}
-      ${evs.some(e=>e.TR>72)?`<div class="small">⚠ T<sub>R</sub> &gt; 72 h pour : ${evs.filter(e=>e.TR>72).map(e=>esc(e.task.name)).join(', ')} – α de la dernière ligne de la table appliqué au-delà.</div>`:''}
-      <div class="small">Heures en ${tz()==='UTC'?'UTC':'heure locale (Europe/Paris)'}. OP<sub>lim</sub> = Hs limite de l'analyse au Tp et à la direction relative prévus (cas le plus défavorable).</div>
-      ${tasks.some(t=>t.notes)?`<div class="small">${tasks.filter(t=>t.notes).map(t=>`*${esc(t.name)} : ${esc(t.notes)}`).join('<br>')}</div>`:''}
-      </td><td class="u">[m]</td></tr>
-      <tr><td>Max Wind speed</td><td>${winds.length?[...new Set(winds)].map(r1).join(' / '):'N/A'} <span class="small">(prévu max dans les fenêtres : ${r1(maxWsF)} m/s)</span></td><td class="u">[m/s]</td></tr>
-      <tr><td colspan="3" class="sh">Screenshot from forecast</td></tr>
-      <tr><td colspan="3">
-        ${s.chart?evs.map(ev=>`<div class="avoid"><div class="ttl">${esc(ev.task.name)}</div>${chartSVG(ev,{w:900,h:270})}</div>`).join(''):''}
-        ${s.pages?src.flatMap(x=>(x.pages||[]).filter(pg=>pg.sel).map(pg=>`<img class="shot" src="${pg.img}" alt="Bulletin ${esc(x.provider)}">`)).join(''):''}
-        ${S.shots.map(im=>`<img class="shot" src="${im}" alt="Capture">`).join('')}
-      </td></tr></table>
-    <table class="blk avoid"><tr><td style="width:40%"></td>${evs.map(ev=>`<td style="text-align:center;font-weight:700">${esc(ev.task.name)}</td>`).join('')}<td class="u"></td></tr>
-      <tr><td>Cable length (if applicable)</td>${evs.map(()=>`<td style="text-align:center">${esc(p.cableLength)}</td>`).join('')}<td class="u">[m]</td></tr>
-      <tr><td>Lay speed (if applicable)</td>${evs.map(()=>`<td style="text-align:center">${esc(p.laySpeed)}</td>`).join('')}<td class="u">[m/h]</td></tr>
-      <tr><td>Required duration for operation (Tpop)</td>${evs.map(ev=>`<td style="text-align:center">${hhmm(ev.task.tpop)}</td>`).join('')}<td class="u">[h]</td></tr>
-      <tr><td>Required duration for operation <u>with</u> contingency (Tr)</td>${evs.map(ev=>`<td style="text-align:center">${hhmm(ev.TR)}</td>`).join('')}<td class="u">[h]</td></tr>
-      <tr><td>Weather window duration (from weather forecast) (Wdw)</td>${evs.map(ev=>`<td style="text-align:center">${ev.per.length?(ev.wdwOpen?'≥ ':'')+hhmm(ev.wdw):'–'}</td>`).join('')}<td class="u">[h]</td></tr></table>
-    <table class="blk avoid"><tr><td colspan="2" class="sh">Is Tr &lt; Wdw ?</td></tr><tr><td class="yes">${CB(trOk)} Yes</td><td class="yes">${CB(evs.length&&!trOk)} No</td></tr></table>
-    <table class="blk avoid"><tr><td colspan="3" class="sh">Vessel heading during operation</td></tr>
-      ${tasks.map(t=>`<tr><td style="width:40%">${esc(t.name)}</td><td>${esc(headingText(t))}</td><td class="u">[°]</td></tr>`).join('')}</table>
-    <table class="blk avoid"><tr><td colspan="2" class="sh">Is heading acceptable ?</td></tr><tr><td class="yes">${CB(headOk)} Yes</td><td class="yes">${CB(evs.length&&!headOk)} No</td></tr></table>
-    <div class="verdict ${allOk?'ok':'bad'} avoid">${allOk?'✔ Toutes les tâches sont dans les limites opérationnelles sur leur fenêtre T_R':'✖ Au moins une tâche dépasse les limites ou n\'est pas couverte par la prévision – voir détail'}</div>
-    <table class="blk avoid sig"><tr><td colspan="2" class="sh">Signatures</td></tr>${p.sigs.map(sg=>`<tr><td style="width:25%">${esc(sg.role)}</td><td>${esc(sg.name)}</td></tr>`).join('')}</table>
-    ${p.preparedBy?`<div class="small" style="margin-top:4px">Préparé par : ${esc(p.preparedBy)} – généré le ${fmtFull(Date.now())}</div>`:''}
-    ${s.annex?`<div class="pb"><h3 style="margin:0 0 4px">Annexe – vérification heure par heure</h3><div class="small">Hs adm. = OP<sub>lim</sub> × α. Dir rel. selon la convention de l'analyse. ${S.tables.filter(t=>tasks.some(k=>k.tableId===t.id)&&t.starNote).map(t=>esc(t.name)+' : '+esc(t.starNote)).join(' · ')}</div>
-      ${evs.map(ev=>`<div class="ttl">${esc(ev.task.name)} – ${fmtFull(ev.task.start)} → ${fmtFull(ev.task.start+ev.TR*H)}</div>${detailTable(ev,true)}`).join('')}</div>`:''}
-  </div>`;
-  $('#report').innerHTML = h;
+      ${opRows.map(([a,b])=>`<tr><td>${esc(a)}</td><td class="cb">${CB(ops.has(a))}</td><td>${esc(b||'')}</td><td class="cb">${b?CB(ops.has(b)):''}</td></tr>`).join('')}</table>
+    <table class="blk"><tr><td colspan="${provList.length*2}" class="sh">Conservative forecast</td></tr>
+      <tr>${provList.map(pv=>`<td>${esc(pv)}</td><td class="cb">${CB(provs.get(pv))}</td>`).join('')}</tr>
+      <tr><td colspan="${provList.length*2}" class="small">${src.map(x=>`<strong>${esc(x.provider)}</strong> – ${esc(x.location||'')} – émis le ${fmtFull(x.issued)}${govIds.has(x.id)?' – <strong>prévision la plus pénalisante, retenue</strong>':''}`).join('<br>')||'Aucun bulletin'}<br>
+      Heures en ${tz()==='UTC'?'UTC':'heure locale (Europe/Paris)'} · Mer totale · Méthode α : ${mname} · Table : ${esc(S.alpha.name)}</td></tr></table>
+    <table class="blk"><tr><td class="sh" colspan="7">Synthèse</td></tr>
+      <tr><th class="l">Tâche</th><th>Heading cible</th><th>Début</th><th>T<sub>pop</sub> / T<sub>R</sub></th><th>W<sub>dw</sub></th><th>Utilisation max</th><th>Résultat</th></tr>
+      ${evs.map(ev=>`<tr><td>${esc(taskName(ev.task))}</td><td class="c">${d3(ev.task.heading)} ${({ok:'',av:'(à éviter)',no:'(interdit)'})[headingClass(ev)]||''}</td><td class="c nw">${fmtH(ev.task.start)}</td><td class="c">${hhmm(ev.TP)} / ${hhmm(ev.TR)}</td><td class="c">${ev.per.length?(ev.wdwOpen?'≥ ':'')+hhmm(ev.wdw):'–'}</td><td class="c">${ev.per.length?r0(100*Math.max(...ev.per.map(r=>r.maxUtil)))+' %':'–'}</td><td class="c">${ev.ok?'<span class="ok">✔ OK</span>':'<span class="no">✖ NOK</span>'}</td></tr>`).join('')}
+    </table>`;
+  evs.forEach((ev,ti)=>{
+    const k=ev.task, tbl=S.tables.find(t=>t.id===k.tableId), g=ev.gov;
+    h+=`<div class="sec ${ti>0?'pb':''}">Tâche ${ti+1} – ${esc(taskName(k))} <span style="font-weight:400">(${esc(k.op)})</span></div>
+      <table class="blk"><tr><th style="width:22%">Analyse / critère</th><td>${tbl?esc(tbl.name)+(tbl.sym?' (symétrique)':''):`OP<sub>lim</sub> = ${r2(num(k.oplim))} m (toutes directions)`}</td><th style="width:18%">Heading cible</th><td class="c" style="width:12%"><strong>${d3(k.heading)}</strong></td></tr>
+        <tr><th>Début → fin T<sub>pop</sub> → fin T<sub>R</sub></th><td>${fmtFull(k.start)} → ${fmtH(k.start+ev.TP*H)} → ${fmtH(k.start+ev.TR*H)}</td><th>T<sub>pop</sub> / cont. / T<sub>R</sub></th><td class="c nw">${hhmm(ev.TP)} / ${hhmm(num(k.cont)||0)} / ${hhmm(ev.TR)}</td></tr>
+        ${k.op==='Cable laying'?`<tr><th>Longueur / vitesse de pose</th><td>${r0(num(k.layLength))} m à ${r0(num(k.laySpeed))} m/h</td><th>Vent max</th><td class="c">${k.windMax!=null?r1(num(k.windMax))+' m/s':'N/A'}</td></tr>`:`<tr><th>Vent max (Ws10)</th><td colspan="3">${k.windMax!=null?r1(num(k.windMax))+' m/s':'N/A'}</td></tr>`}
+        ${k.notes?`<tr><th>Notes</th><td colspan="3">${esc(k.notes)}</td></tr>`:''}</table>
+      ${ev.nonRestricted?'<div class="verdict bad">T<sub>POP</sub> &gt; 72 h : opération NON weather-restricted – la méthode α n\'est pas applicable</div>':''}
+      ${!g?'<p>Aucune prévision active.</p>':`
+      <div class="sub">1. Hs max admissible (${s.method==='global'?'méthode globale':'méthode discrétisée'}) – prévision ${esc(g.src.provider)}</div>${allowTable(ev,true)}
+      <div class="small">OP<sub>lim</sub> lu dans l'analyse au Tp moyen et au heading relatif (direction moyenne des vagues − heading cible). ${tbl&&g.flat.some(x=>x.st.star)?'* valeur annotée dans l\'analyse. ':''}${g.flat.some(x=>x.st.flags.some(f=>/Tp/.test(f)))?'⚠ Tp moyen hors de l\'analyse : colonne la plus proche utilisée. ':''}</div>
+      ${R.wx?`<div class="sub avoid">2. Météo considérée – ${esc(g.src.provider)} émis le ${fmtFull(g.src.issued)}</div>${wxExtract(ev)}`:''}
+      ${R.chart?`<div class="avoid"><div class="sub">3. Hs prévu et Hs admissible</div>${chartSVG(ev,{w:900,h:260})}</div>`:''}
+      ${R.rose?`<div class="avoid"><div class="sub">4. Headings du navire</div><div class="rose"><div>${roseSVG(ev,300)}</div><div>${roseText(ev).replace(/class="muted"/g,'class="small"')}<div class="small" style="margin-top:6px">Couronne = cap du navire (vrai). Flèche bleue = provenance moyenne des vagues. Interdit : Hs max &gt; OP<sub>wf</sub> sur au moins une période ; à éviter : utilisation &gt; ${s.avoid} %.</div></div></div></div>`:''}
+      <div class="avoid"><div class="sub">5. Résultat</div>${resultTable(ev,true)}
+      <table class="blk"><tr><th style="width:40%">Couverture de T<sub>R</sub> par la prévision</th><td class="c">${ev.per.every(r=>r.covered)?'<span class="ok">✔ Oui</span>':'<span class="no">✖ Non</span>'}</td><th>T<sub>R</sub> &lt; W<sub>dw</sub> ?</th><td class="c">${ev.trOk?'<span class="ok">✔ Oui</span>':'<span class="no">✖ Non</span>'} (W<sub>dw</sub> ${ev.wdwOpen?'≥ ':''}${hhmm(ev.wdw)})</td></tr>
+        <tr><th>Heading cible acceptable ?</th><td class="c">${({ok:'<span class="ok">✔ Oui</span>',av:'<span style="color:#8a5a00;font-weight:700">⚠ Oui, marge faible</span>',no:'<span class="no">✖ Non</span>'})[headingClass(ev)]}</td><th>Conclusion</th><td class="c">${ev.ok?'<span class="ok">✔ Dans les limites</span>':'<span class="no">✖ Hors limites</span>'}</td></tr></table>
+      ${ev.per.length>1?`<div class="small">Autres prévisions vérifiées : ${ev.per.filter(r=>r!==g).map(r=>`${esc(r.src.provider)} ${r.ok?'OK':'NOK'} (utilisation max ${r0(100*r.maxUtil)} %)`).join(' · ')}</div>`:''}</div>`}`;
+  });
+  h+=`<div class="avoid pb"><div class="sec">Conclusion et signatures</div>
+    <table class="blk"><tr><td colspan="2" class="sh">Is Tr &lt; Wdw ?</td><td colspan="2" class="sh">Is heading acceptable ?</td></tr>
+      <tr><td class="yes">${CB(trOk)} Yes</td><td class="yes">${CB(evs.length&&!trOk)} No</td><td class="yes">${CB(headOk)} Yes</td><td class="yes">${CB(evs.length&&!headOk)} No</td></tr></table>
+    <div class="verdict ${allOk?'ok':'bad'}">${allOk?'✔ Les opérations sont dans les limites opérationnelles sur toute leur fenêtre T<sub>R</sub>':'✖ Au moins une opération dépasse les limites ou n\'est pas couverte par la prévision'}</div>
+    <table class="blk sig"><tr><th style="width:30%">Fonction</th><th style="width:28%">Nom</th><th>Signature</th><th style="width:18%">Date / heure</th></tr>
+      ${p.sigs.map(sg=>`<tr><td>${esc(sg.role)}</td><td>${esc(sg.name)}</td><td></td><td></td></tr>`).join('')}</table>
+    ${p.preparedBy?`<div class="small" style="margin-top:4px">Préparé par : ${esc(p.preparedBy)}</div>`:''}<div class="small">Document généré le ${fmtFull(Date.now())} (${tzLabel()}).</div></div>`;
+  if(S.shots.length) h+=`<div class="pb"><div class="sec">Captures</div>${S.shots.map(im=>`<img class="shot" src="${im}" alt="Capture">`).join('')}</div>`;
+  if(R.annex) h+=`<div class="pb"><div class="sec">Annexe – comparaison des méthodes α</div>${evs.map(ev=>{ const o=evalTask(ev.task, s.method==='global'?'disc':'global'); return `<div class="sub">${esc(taskName(ev.task))} – méthode ${o.method==='global'?'globale':'discrétisée'} : ${o.ok?'<span class="ok">OK</span>':'<span class="no">NOK</span>'}</div>${allowTable(o,true)}${resultTable(o,true)}`; }).join('')}</div>`;
+  if(R.pages) h+=src.flatMap(x=>(x.pages||[]).filter(pg=>pg.sel).map(pg=>`<div class="pb"><div class="sec">Bulletin ${esc(x.provider)}</div><img class="shot" src="${pg.img}" alt="Bulletin ${esc(x.provider)}"></div>`)).join('');
+  h+='</div>';
+  $('#report').innerHTML=h;
 }
-function hhmm(h){ if(h==null||!isFinite(h)) return '–'; const m=Math.round(h*60); return `${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`; }
 
 /* ---------------- dialogs ---------------- */
 function openDlg(title, body){ $('#dlgT').textContent=title; $('#dlgB').innerHTML=body; $$('[data-close]',$('#dlg')).forEach(b=>b.onclick=closeDlg); $('#dlg').showModal(); }
@@ -1153,32 +1344,31 @@ function closeDlg(){ $('#dlg').close(); }
 
 /* ---------------- tabs & wiring ---------------- */
 let curTab='project';
-const renderers = {project:renderProject, tables:renderTables, alpha:renderAlpha, tasks:renderTasks, weather:renderWeather, eval:renderEval, report:renderReport};
+const renderers={project:renderProject, tables:renderTables, alpha:renderAlpha, tasks:renderTasks, weather:renderWeather, eval:renderEval, report:renderReport};
 function showTab(id){
   curTab=id; $$('nav.steps button').forEach(b=>b.setAttribute('aria-selected', b.dataset.tab===id));
   $$('section.tab').forEach(s=>s.classList.toggle('on', s.id==='tab-'+id));
-  renderers[id](); try{ sessionStorage.setItem('wx_tab',id); }catch(e){}
-  window.scrollTo(0,0);
+  renderers[id](); try{ sessionStorage.setItem('wx_tab',id); }catch(e){} window.scrollTo(0,0);
 }
 function renderAll(){ renderers[curTab](); updateDot(); }
 $$('nav.steps button').forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
 $('#tzSel').value=S.settings.tz; $('#tzSel').onchange=e=>{ S.settings.tz=e.target.value; save(); renderAll(); };
 $('#btnSave').onclick=()=>{
-  const name = `WeatherAssessment_${(S.project.project||'plan').replace(/[^\w-]+/g,'_')}_${utcToInput(Date.now()).replace(/[:T]/g,'-')}.json`;
+  const name=`WeatherAssessment_${(S.project.project||'plan').replace(/[^\w-]+/g,'_')}_${utcToInput(Date.now()).replace(/[:T]/g,'-')}.json`;
   const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([JSON.stringify(S)],{type:'application/json'})); a.download=name; document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href); a.remove();},500);
   toast('Plan enregistré : '+name);
 };
-$('#fileOpen').onchange=async e=>{ const f=e.target.files[0]; if(!f) return; try{ const o=JSON.parse(await f.text()); if(o.v!==2) throw new Error('fichier non compatible (version 2 attendue)'); S=o; S.settings=Object.assign(defaultState().settings,S.settings||{}); save(); $('#tzSel').value=S.settings.tz; renderAll(); toast('Plan ouvert'); }catch(err){ toast('Ouverture impossible : '+err.message,6000);} e.target.value=''; };
+$('#fileOpen').onchange=async e=>{ const f=e.target.files[0]; if(!f) return; try{ const o=migrate(JSON.parse(await f.text())); S=o; const d=defaultState().settings; S.settings=Object.assign({},d,S.settings||{}); S.settings.rep=Object.assign({},d.rep,S.settings.rep||{}); save(); $('#tzSel').value=S.settings.tz; renderAll(); toast('Plan ouvert'); }catch(err){ toast('Ouverture impossible : '+err.message,6000); } e.target.value=''; };
 $('header.top label.btn').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); $('#fileOpen').click(); } });
-$('#btnNew').onclick=()=>{ openDlg('Repartir de l\'exemple ?', `<p>Le plan actuel (tâches, tableaux, bulletins) sera remplacé par l'exemple. Pensez à l'enregistrer avant.</p><div class="row end"><button class="b" data-close>Annuler</button><button class="b d" id="rst">Remplacer</button></div>`); $('#rst').onclick=()=>{ S=defaultState(); save(); closeDlg(); $('#tzSel').value=S.settings.tz; renderAll(); }; };
-$('#logoFile').onchange=async e=>{ const f=e.target.files[0]; if(!f) return; S.project.logo = await fileToDataURL(f, 400); save(); renderProject(); };
+$('#btnNew').onclick=()=>{ openDlg('Repartir de l\'exemple ?', `<p>Le plan actuel (tâches, analyses, bulletins) sera remplacé par l'exemple. Pensez à l'enregistrer avant.</p><div class="row end"><button class="b" data-close>Annuler</button><button class="b d" id="rst">Remplacer</button></div>`); $('#rst').onclick=()=>{ S=defaultState(); save(); closeDlg(); $('#tzSel').value=S.settings.tz; renderAll(); }; };
+$('#logoFile').onchange=async e=>{ const f=e.target.files[0]; if(!f) return; S.project.logo=await fileToDataURL(f,400); save(); renderProject(); };
 $('#logoReset').onclick=()=>{ S.project.logo=null; save(); renderProject(); };
-$('#tblSel').onchange=e=>{ curTbl=e.target.value; renderTables(); };
+$('#sigAdd').onclick=()=>{ S.project.sigs.push({role:'',name:''}); save(); renderProject(); };
+$('#tblSel').onchange=e=>{ curTbl=e.target.value; G.a=G.f=null; renderTables(); };
 $('#tblNew').onclick=newTable;
 $('#tblDup').onclick=()=>{ const t=S.tables.find(x=>x.id===curTbl); if(!t) return; const c=JSON.parse(JSON.stringify(t)); c.id=uid(); c.name+=' (copie)'; S.tables.push(c); curTbl=c.id; save(); renderTables(); };
-$('#tblDel').onclick=()=>{ const t=S.tables.find(x=>x.id===curTbl); if(!t) return; S.tables=S.tables.filter(x=>x!==t); S.tasks.forEach(k=>{ if(k.tableId===t.id) k.tableId=''; }); save(); renderTables(); };
-$('#tblPaste').onclick=pasteTableDialog;
-$('#taskNew').onclick=()=>{ S.tasks.push({id:uid(),name:'Nouvelle tâche',op:'Cable laying',tableId:S.tables[0]?.id||'',oplim:null,hMode:'fixed',heading:0,heading2:0,tpop:12,cont:6,start:Math.ceil(Date.now()/H)*H,windMax:null,alphaOv:null,include:true,notes:''}); save(); renderTasks(); };
+$('#tblDel').onclick=()=>{ const t=S.tables.find(x=>x.id===curTbl); if(!t) return; openDlg('Supprimer l\'analyse ?',`<p>« ${esc(t.name)} » sera supprimée. Les tâches qui l'utilisent passeront en limite Hs simple.</p><div class="row end"><button class="b" data-close>Annuler</button><button class="b d" id="tdel">Supprimer</button></div>`); $('#tdel').onclick=()=>{ S.tables=S.tables.filter(x=>x!==t); S.tasks.forEach(k=>{ if(k.tableId===t.id) k.tableId=''; }); save(); closeDlg(); renderTables(); }; };
+$('#taskNew').onclick=()=>{ S.tasks.push(newTask({tableId:S.tables[0]?.id||''})); save(); renderTasks(); };
 const drop=$('#drop');
 drop.onclick=()=>$('#wxFile').click();
 drop.onkeydown=e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); $('#wxFile').click(); } };
@@ -1187,20 +1377,17 @@ drop.ondragleave=()=>drop.classList.remove('over');
 drop.ondrop=async e=>{ e.preventDefault(); drop.classList.remove('over'); for(const f of e.dataTransfer.files) await importFile(f); };
 $('#wxFile').onchange=async e=>{ for(const f of e.target.files) await importFile(f); e.target.value=''; };
 $('#btnOM').onclick=fetchOpenMeteo; $('#btnWindy').onclick=fetchWindy; $('#btnPasteWx').onclick=()=>pasteDialog();
-$('#wxLat').onchange=e=>{S.settings.lat=num(e.target.value); save();}; $('#wxLon').onchange=e=>{S.settings.lon=num(e.target.value); save();};
+$('#wxLat').onchange=e=>{ S.settings.lat=num(e.target.value); save(); }; $('#wxLon').onchange=e=>{ S.settings.lon=num(e.target.value); save(); };
 $('#btnPrint').onclick=()=>{ renderReport(); setTimeout(()=>window.print(),50); };
-$('#shotFile').onchange=async e=>{ for(const f of e.target.files) S.shots.push(await fileToDataURL(f, 1600)); save(); renderReport(); e.target.value=''; };
+$('#shotFile').onchange=async e=>{ for(const f of e.target.files) S.shots.push(await fileToDataURL(f,1600)); save(); renderReport(); e.target.value=''; };
 window.addEventListener('paste', async e=>{ if(curTab!=='report') return; const it=[...e.clipboardData.items].find(i=>i.type.startsWith('image/')); if(it){ S.shots.push(await fileToDataURL(it.getAsFile(),1600)); save(); renderReport(); toast('Capture ajoutée au rapport'); } });
 function fileToDataURL(f, maxW){ return new Promise(res=>{ const img=new Image(); img.onload=()=>{ const sc=Math.min(1,maxW/img.width); const c=document.createElement('canvas'); c.width=img.width*sc; c.height=img.height*sc; c.getContext('2d').drawImage(img,0,0,c.width,c.height); res(c.toDataURL(f.type==='image/png'?'image/png':'image/jpeg',0.88)); URL.revokeObjectURL(img.src); }; img.src=URL.createObjectURL(f); }); }
-
-// accessibilité : regroupe le texte des libellés (avec indices <sub>) dans un <span>
 function wrapLabels(root=document){
   $$('label.f',root).forEach(l=>{ if(l.dataset.w) return; l.dataset.w=1; const nodes=[]; for(const n of l.childNodes){ if(n.nodeType===1 && /^(INPUT|SELECT|TEXTAREA|DIV|SMALL)$/.test(n.tagName)) break; nodes.push(n); }
     if(nodes.length>1){ const sp=document.createElement('span'); l.insertBefore(sp,nodes[0]); nodes.forEach(n=>sp.appendChild(n)); } });
 }
 new MutationObserver(()=>wrapLabels()).observe(document.getElementById('main'),{childList:true,subtree:true});
-// expose for tests
-window.WX = {get S(){return S}, evalTask, importFile, tableLookup, alphaLookup, relDir, showTab, renderReport, parseDelimited};
+window.WX={get S(){return S}, evalTask, tableLookup, alphaAt, alphaRowFor, relDir, showTab, renderReport, splitStates, samplesIn, seaStats, headingRanges};
 let startTab='project'; try{ startTab=sessionStorage.getItem('wx_tab')||'project'; }catch(e){}
 showTab(renderers[startTab]?startTab:'project');
 </script>
