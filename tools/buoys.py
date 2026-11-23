@@ -7,8 +7,6 @@ JMA, TAO/PIRATA/RAMA, …). Public domain (US Government data).
 
 Output (folder given as first argument):
   latest.json  – one row per station: last observation
-  history.json – last 48 h of wave/wind observations per station (built by appending
-                 the previous feed published on the buoy-data branch)
 """
 import json, os, sys, time, urllib.request, calendar
 
@@ -56,24 +54,8 @@ def main():
     latest = {'updated': now, 'source': 'NOAA NDBC latest observations (public domain)',
               'cols': ['id','name','lat','lon','t','hs','dpd','apd','mwd','wspd','wdir','gst','wtmp','atmp','pres','vis'],
               'stations': rows}
-    # rolling 48 h history
-    hist = {}
-    try:
-        hist = json.loads(get('https://raw.githubusercontent.com/%s/buoy-data/history.json' % REPO, 30)).get('h', {})
-    except Exception as e:
-        print('no previous history:', e)
-    cut = now - 48 * 3600 * 1000
-    for r in rows:
-        sid, t = r[0], r[4]
-        obs = [t, r[5], r[6], r[8], r[9], r[11], r[10]]  # t, hs, dpd, mwd, wspd, gst, wdir
-        if all(x is None for x in obs[1:]): continue
-        h = [o for o in hist.get(sid, []) if o[0] >= cut and o[0] != t]
-        h.append(obs); h.sort(key=lambda o: o[0]); hist[sid] = h
-    hist = {k: v for k, v in hist.items() if v and v[-1][0] >= cut}
     with open(os.path.join(OUT, 'latest.json'), 'w') as f: json.dump(latest, f, separators=(',', ':'))
-    with open(os.path.join(OUT, 'history.json'), 'w') as f:
-        json.dump({'updated': now, 'cols': ['t','hs','dpd','mwd','wspd','gst','wdir'], 'h': hist}, f, separators=(',', ':'))
-    print(len(rows), 'stations,', len(hist), 'with history')
+    print(len(rows), 'stations')
 
 if __name__ == '__main__':
     main()
