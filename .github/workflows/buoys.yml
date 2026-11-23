@@ -14,8 +14,12 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Build the buoy feed
+      - name: Build the buoy feed (NOAA NDBC)
         run: python3 tools/buoys.py out
+      - name: Candhis real-time buoys (only once the CANDHIS_KEY secret is set)
+        env:
+          CANDHIS_KEY: ${{ secrets.CANDHIS_KEY }}
+        run: python3 tools/candhis.py out || echo "Candhis skipped"
       - name: Publish on the buoy-data branch (single commit, no history)
         run: |
           cd out
