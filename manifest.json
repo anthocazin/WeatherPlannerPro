@@ -4,8 +4,8 @@
   "description": "Offshore operational weather planning tool",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#05070a",
-  "theme_color": "#0f172a",
+  "background_color": "#F4F8FC",
+  "theme_color": "#2271B3",
   "icons": [
     {
       "src": "favicon-96x96.png",
