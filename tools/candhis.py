@@ -15,7 +15,7 @@ import json, os, sys, time, calendar, urllib.request, urllib.error
 OUT = sys.argv[1] if len(sys.argv) > 1 else 'out'
 KEY = os.environ.get('CANDHIS_KEY', '').strip().strip('"\'').strip()
 REPO = os.environ.get('GITHUB_REPOSITORY', 'anthocazin/weatherplannerpro')
-BASES = ['https://candhis.cerema.fr/API/v1/', 'https://candhis.cerema.fr/candhisPROD/API/v1/']
+BASES = ['https://candhis.cerema.fr/API/v1/']
 EVERY = {1: 30, 2: 30, 0: 180}   # minutes between two requests of the same type
 DAILY_CAP = 130                  # keeps a margin under the 150/day quota for manual tests
 
@@ -68,6 +68,9 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     if not KEY:
         print('CANDHIS_KEY not set: Candhis skipped'); return
+    import re
+    shape = re.sub(r'[0-9a-fA-F]', 'x', KEY); shape = re.sub(r'[^x\-]', '?', shape)
+    print('key shape (value hidden): %d characters, groups %s%s' % (len(KEY), '-'.join(str(len(g)) for g in shape.split('-')), ', non-hex characters present' if '?' in shape else ''))
     now = int(time.time() * 1000); day = time.strftime('%Y-%m-%d', time.gmtime())
     prev = previous()
     st = prev.get('state') or {}
